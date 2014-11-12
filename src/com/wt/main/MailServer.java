@@ -1,5 +1,10 @@
 package com.wt.main;
 
+/**
+ * @author wangtao
+ * @time 2014/11/12
+ */
+
 public class MailServer {
 
 	/**
