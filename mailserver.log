@@ -1,0 +1,201 @@
+5 [main] DEBUG com.wt.main.MailServer - this is debug
+6 [main] INFO com.wt.main.MailServer - this is info
+6 [main] ERROR com.wt.main.MailServer - this is error
+5 [main] DEBUG com.wt.main.MailServer - this is debug
+6 [main] INFO com.wt.main.MailServer - this is info
+6 [main] ERROR com.wt.main.MailServer - this is error
+5 [main] INFO com.wt.main.MailServer - this is info
+6 [main] ERROR com.wt.main.MailServer - this is error
+5 [main] DEBUG com.wt.main.MailServer - this is debug
+6 [main] INFO com.wt.main.MailServer - this is info
+6 [main] ERROR com.wt.main.MailServer - this is error
+5 [main] DEBUG com.wt.main.MailServer - this is debug
+6 [main] INFO com.wt.main.MailServer - this is info
+6 [main] ERROR com.wt.main.MailServer - this is error
+25620 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+25614 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+25637 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+25631 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+6805 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+16254 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+5 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+6474 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+6474 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+5 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+5936 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+5937 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+5943 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+1 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+5957 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+15 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+5958 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+16 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+5 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+5 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+6991 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+6992 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+7 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+1 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+20747 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+20741 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+20748 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+20742 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+20748 [main] DEBUG com.wt.utils.SMTPClient - Send 'HELO smtp.qq.com' to the server successfully
+20742 [main] DEBUG com.wt.utils.SMTPClient - Send 'HELO smtp.qq.com' to the server successfully
+142065 [main] DEBUG com.wt.utils.SMTPClient - null
+142059 [main] DEBUG com.wt.utils.SMTPClient - null
+142066 [main] ERROR com.wt.utils.SMTPClient - java.lang.NullPointerException
+142060 [main] ERROR com.wt.utils.SMTPClient - java.lang.NullPointerException
+5 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+8117 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+8119 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+8119 [main] DEBUG com.wt.utils.SMTPClient - Send 'HELO smtp.qq.com' to the server successfully
+128616 [main] DEBUG com.wt.utils.SMTPClient - null
+128616 [main] ERROR com.wt.utils.SMTPClient - java.lang.NullPointerException
+8 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+2 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+791 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+785 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+791 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+785 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+791 [main] DEBUG com.wt.utils.SMTPClient - Send 'HELO smtp.qq.com' to the server successfully
+785 [main] DEBUG com.wt.utils.SMTPClient - Send 'HELO smtp.qq.com' to the server successfully
+5 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+920 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+921 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+921 [main] DEBUG com.wt.utils.SMTPClient - Send 'HELO smtp.qq.com' to the server successfully
+121914 [main] DEBUG com.wt.utils.SMTPClient - null
+121908 [main] DEBUG com.wt.utils.SMTPClient - null
+121914 [main] ERROR com.wt.utils.SMTPClient - java.lang.NullPointerException
+121908 [main] ERROR com.wt.utils.SMTPClient - java.lang.NullPointerException
+122179 [main] DEBUG com.wt.utils.SMTPClient - null
+122179 [main] ERROR com.wt.utils.SMTPClient - java.lang.NullPointerException
+6 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+1382 [main] DEBUG com.wt.utils.SMTPClient - 111111
+1820 [main] DEBUG com.wt.utils.SMTPClient - 222222
+1820 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+1821 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+1821 [main] DEBUG com.wt.utils.SMTPClient - Send 'HELO smtp.qq.com' to the server successfully
+1821 [main] DEBUG com.wt.utils.SMTPClient - 111111
+63107 [main] DEBUG com.wt.utils.SMTPClient - 222222
+63108 [main] DEBUG com.wt.utils.SMTPClient - null
+63108 [main] ERROR com.wt.utils.SMTPClient - java.lang.NullPointerException
+8 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+1 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+1168 [main] DEBUG com.wt.utils.SMTPClient - 111111
+1161 [main] DEBUG com.wt.utils.SMTPClient - 111111
+1176 [main] DEBUG com.wt.utils.SMTPClient - 222222
+1169 [main] DEBUG com.wt.utils.SMTPClient - 222222
+1176 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+1169 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+1177 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+1170 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+5 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+1573 [main] DEBUG com.wt.utils.SMTPClient - 111111
+1685 [main] DEBUG com.wt.utils.SMTPClient - 222222
+1686 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+1686 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+122789 [main] DEBUG com.wt.utils.SMTPClient - null
+122782 [main] DEBUG com.wt.utils.SMTPClient - null
+122074 [main] DEBUG com.wt.utils.SMTPClient - null
+6 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+6 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+1020 [main] DEBUG com.wt.utils.SMTPClient - 111111
+1028 [main] DEBUG com.wt.utils.SMTPClient - 222222
+1028 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+1028 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+15482 [main] DEBUG com.wt.utils.SMTPClient - 111111
+15488 [main] DEBUG com.wt.utils.SMTPClient - 222222
+15489 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+15489 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+75745 [main] DEBUG com.wt.utils.SMTPClient - null
+6 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+827 [main] DEBUG com.wt.utils.SMTPClient - 111111
+835 [main] DEBUG com.wt.utils.SMTPClient - 222222
+835 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+835 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+121587 [main] DEBUG com.wt.utils.SMTPClient - null
+5 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+10560 [main] DEBUG com.wt.utils.SMTPClient - 111111
+10567 [main] DEBUG com.wt.utils.SMTPClient - 222222
+10567 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+10567 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+121225 [main] DEBUG com.wt.utils.SMTPClient - null
+131497 [main] DEBUG com.wt.utils.SMTPClient - null
+5 [main] INFO com.wt.utils.SMTPClient - Create a smtp client
+7 [main] DEBUG com.wt.utils.SMTPClient - server: smtp.qq.com/tport: 25
+7 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+25307 [main] DEBUG com.wt.utils.SMTPClient - 111111
+25318 [main] DEBUG com.wt.utils.SMTPClient - 222222
+25318 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+25318 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+5 [main] INFO com.wt.utils.SMTPClient - Create a smtp client
+7 [main] DEBUG com.wt.utils.SMTPClient - server: smtp.163.com	port: 25
+7 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.163.com ...
+4 [main] INFO com.wt.utils.SMTPClient - Create a smtp client
+6 [main] DEBUG com.wt.utils.SMTPClient - server: smtp.163.com	port: 25
+6 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.163.com ...
+1589 [main] DEBUG com.wt.utils.SMTPClient - 220 163.com Anti-spam GT for Coremail System (163com[20121016])
+1589 [main] INFO com.wt.utils.SMTPClient - Connected smtp.163.com successfully
+1624 [main] DEBUG com.wt.utils.SMTPClient - 250 OK
+10 [main] INFO com.wt.utils.SMTPClient - Create a smtp client
+13 [main] DEBUG com.wt.utils.SMTPClient - server: smtp.163.com	port: 25
+14 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.163.com ...
+25380 [main] DEBUG com.wt.utils.SMTPClient - 220 163.com Anti-spam GT for Coremail System (163com[20121016])
+25380 [main] INFO com.wt.utils.SMTPClient - Connected smtp.163.com successfully
+25381 [main] DEBUG com.wt.utils.SMTPClient - Send 'HELO smtp.163.com' to the server successfully
+40416 [main] DEBUG com.wt.utils.SMTPClient - 250 OK
+40416 [main] INFO com.wt.utils.SMTPClient - register the server successfully
+4 [main] INFO com.wt.utils.SMTPClient - Create a smtp client
+6 [main] DEBUG com.wt.utils.SMTPClient - server: smtp.163.com	port: 25
+6 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.163.com ...
+10901 [main] DEBUG com.wt.utils.SMTPClient - 220 163.com Anti-spam GT for Coremail System (163com[20121016])
+10902 [main] INFO com.wt.utils.SMTPClient - Connected smtp.163.com successfully
+10902 [main] DEBUG com.wt.utils.SMTPClient - Send 'HELO smtp.163.com' to the server successfully
+11027 [main] DEBUG com.wt.utils.SMTPClient - 250 OK
+11028 [main] INFO com.wt.utils.SMTPClient - register the server successfully
+4 [main] INFO com.wt.utils.SMTPClient - Create a smtp client
+6 [main] DEBUG com.wt.utils.SMTPClient - server: smtp.qq.com	port: 25
+6 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+25810 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+25810 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+25811 [main] DEBUG com.wt.utils.SMTPClient - Send 'HELO smtp.qq.com' to the server successfully
+5 [main] INFO com.wt.utils.SMTPClient - Create a smtp client
+6 [main] DEBUG com.wt.utils.SMTPClient - server: smtp.qq.com	port: 25
+7 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+20522 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+20522 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+20522 [main] DEBUG com.wt.utils.SMTPClient - Send 'HELO smtp.qq.com' to the server successfully
+4 [main] INFO com.wt.utils.SMTPClient - Create a smtp client
+6 [main] DEBUG com.wt.utils.SMTPClient - server: smtp.qq.com	port: 25
+6 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.qq.com ...
+10680 [main] DEBUG com.wt.utils.SMTPClient - 220 smtp.qq.com Esmtp QQ Mail Server
+10681 [main] INFO com.wt.utils.SMTPClient - Connected smtp.qq.com successfully
+10681 [main] DEBUG com.wt.utils.SMTPClient - Send 'HELO smtp.qq.com' to the server successfully
+5 [main] INFO com.wt.utils.SMTPClient - Create a smtp client
+7 [main] DEBUG com.wt.utils.SMTPClient - server: smtp.163.com	port: 25
+7 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.163.com ...
+16770 [main] DEBUG com.wt.utils.SMTPClient - 220 163.com Anti-spam GT for Coremail System (163com[20121016])
+16770 [main] INFO com.wt.utils.SMTPClient - Connected smtp.163.com successfully
+16771 [main] DEBUG com.wt.utils.SMTPClient - Send 'HELO smtp.163.com' to the server successfully
+16903 [main] DEBUG com.wt.utils.SMTPClient - 250 OK
+16903 [main] INFO com.wt.utils.SMTPClient - register the server successfully
+5 [main] INFO com.wt.utils.SMTPClient - Create a smtp client
+7 [main] DEBUG com.wt.utils.SMTPClient - server: smtp.163.com	port: 25
+7 [main] INFO com.wt.utils.SMTPClient - Connecting smtp.163.com ...
+5744 [main] DEBUG com.wt.utils.SMTPClient - 220 163.com Anti-spam GT for Coremail System (163com[20121016])
+5744 [main] INFO com.wt.utils.SMTPClient - Connected smtp.163.com successfully
+5745 [main] DEBUG com.wt.utils.SMTPClient - Send 'HELO smtp.163.com' to the server successfully
+5843 [main] DEBUG com.wt.utils.SMTPClient - 250 OK
+5843 [main] INFO com.wt.utils.SMTPClient - register the server successfully
+4 [main] INFO com.wt.smtp.SMTPClient - Create a smtp client
+6 [main] DEBUG com.wt.smtp.SMTPClient - server: smtp.163.com	port: 25
+6 [main] INFO com.wt.smtp.SMTPClient - Connecting smtp.163.com ...
+120 [main] DEBUG com.wt.smtp.SMTPClient - 220 hz-b-163smtp2.163.com SMTP Server for Netease [466] 1fe9ba35-0342-4e4f-aa9b-d352acb0404e
+120 [main] INFO com.wt.smtp.SMTPClient - Connected smtp.163.com successfully
+120 [main] DEBUG com.wt.smtp.SMTPClient - Send 'HELO smtp.163.com' to the server successfully
+156 [main] DEBUG com.wt.smtp.SMTPClient - 250 hz-b-163smtp2.163.com 1fe9ba35-0342-4e4f-aa9b-d352acb0404e
+156 [main] INFO com.wt.smtp.SMTPClient - register the server successfully
+156 [main] DEBUG com.wt.smtp.SMTPClient - Send 'MAIL From:<abc@qq.com>' to the server successfully
+191 [main] DEBUG com.wt.smtp.SMTPClient - 550 Invalid User 1fe9ba35-0342-4e4f-aa9b-d352acb0404e
+192 [main] ERROR com.wt.smtp.SMTPClient - java.lang.Exception: set envelop fail

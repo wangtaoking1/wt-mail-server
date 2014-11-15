@@ -8,11 +8,8 @@ package com.wt.utils;
 public class MailMessage {
 	private String from;
 	private String to;
-	private String dataFrom;
-	private String dataTo;
 	private String subject;
 	private String content;
-	private String date;
 	
 	public String getFrom() {
 		return from;
@@ -28,19 +25,6 @@ public class MailMessage {
 		this.to = to;
 	}
 	
-	public String getDataFrom() {
-		return dataFrom;
-	}
-	public void setDataFrom(String dataFrom) {
-		this.dataFrom = dataFrom;
-	}
-	
-	public String getDataTo() {
-		return dataTo;
-	}
-	public void setDataTo(String dataTo) {
-		this.dataTo = dataTo;
-	}
 	
 	public String getSubject() {
 		return subject;
@@ -56,12 +40,19 @@ public class MailMessage {
 		this.content = content;
 	}
 	
-	public String getDate() {
-		return this.date;
-	}
-	public void setDate(String date) {
-		this.date = date;
-	}
 	
+	/**
+	 * 
+	 * @return "The body of the message to send"
+	 */
+	public String getMessageBody() {
+		StringBuffer buffer = new StringBuffer();
+		buffer.append("From:<" + this.from + ">\n");
+		buffer.append("To:<" + this.to + ">\n");
+		buffer.append("Subject:" + this.subject + "\n");
+		buffer.append(this.content + "\n.");
+		
+		return buffer.toString();
+	}
 	
 }
