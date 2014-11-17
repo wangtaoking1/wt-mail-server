@@ -199,3 +199,84 @@
 156 [main] DEBUG com.wt.smtp.SMTPClient - Send 'MAIL From:<abc@qq.com>' to the server successfully
 191 [main] DEBUG com.wt.smtp.SMTPClient - 550 Invalid User 1fe9ba35-0342-4e4f-aa9b-d352acb0404e
 192 [main] ERROR com.wt.smtp.SMTPClient - java.lang.Exception: set envelop fail
+4 [main] INFO com.wt.smtp.SMTPClient - Create a smtp client
+153 [main] DEBUG com.wt.smtp.SMTPClient - server: 163mx01.mxmail.netease.com	port: 25
+153 [main] INFO com.wt.smtp.SMTPClient - Connecting 163mx01.mxmail.netease.com ...
+1299 [main] DEBUG com.wt.smtp.SMTPClient - 220 163.com Anti-spam GT for Coremail System (163com[20121016])
+1299 [main] INFO com.wt.smtp.SMTPClient - Connected 163mx01.mxmail.netease.com successfully
+1300 [main] DEBUG com.wt.smtp.SMTPClient - Send 'HELO 163mx01.mxmail.netease.com' to the server successfully
+1339 [main] DEBUG com.wt.smtp.SMTPClient - 250 OK
+1339 [main] INFO com.wt.smtp.SMTPClient - register the server successfully
+1339 [main] DEBUG com.wt.smtp.SMTPClient - Send 'MAIL From:<abc@qq.com>' to the server successfully
+1379 [main] DEBUG com.wt.smtp.SMTPClient - 250 Mail OK
+1380 [main] DEBUG com.wt.smtp.SMTPClient - Send 'RCPT To:<wangtaoking1@163.com>' to the server successfully
+1439 [main] DEBUG com.wt.smtp.SMTPClient - 250 Mail OK
+1440 [main] INFO com.wt.smtp.SMTPClient - set envelop successfully
+1440 [main] DEBUG com.wt.smtp.SMTPClient - Send 'data' to the server successfully
+1479 [main] DEBUG com.wt.smtp.SMTPClient - 354 End data with <CR><LF>.<CR><LF>
+1480 [main] DEBUG com.wt.smtp.SMTPClient - Send 'From:<abc@qq.com>
+To:<wangtaoking1@163.com>
+Subject:hello
+hello world!!
+.' to the server successfully
+1524 [main] DEBUG com.wt.smtp.SMTPClient - 554 DT:SPM mx15, QcCowEDZPVBoW2hUU2QpGQ--.539S2 1416125289 http://mail.163.com/help/help_spam_16.htm?ip=113.108.133.43&hostid=mx15&time=1416125289
+1524 [main] ERROR com.wt.smtp.SMTPClient - java.lang.Exception: send the body of message fail
+5 [main] INFO com.wt.smtp.SMTPClient - Create a smtp client
+150 [main] DEBUG com.wt.smtp.SMTPClient - server: sohumx1.sohu.com	port: 25
+150 [main] INFO com.wt.smtp.SMTPClient - Connecting sohumx1.sohu.com ...
+290 [main] DEBUG com.wt.smtp.SMTPClient - 220-sohumx126_190.sohu.com ESMTP Postfix
+291 [main] ERROR com.wt.smtp.SMTPClient - java.lang.NumberFormatException: For input string: "220-sohumx126_190.sohu.com"
+291 [main] INFO com.wt.smtp.SMTPClient - Fail to send the message from abc@qq.com to wangtaoking1@sohu.com
+11 [main] INFO com.wt.smtp.SMTPClient - Create a smtp client
+137 [main] DEBUG com.wt.smtp.SMTPClient - server: sohumx1.sohu.com	port: 25
+137 [main] INFO com.wt.smtp.SMTPClient - Connecting sohumx1.sohu.com ...
+223 [main] DEBUG com.wt.smtp.SMTPClient - 220-sohumx71_50.sohu.com ESMTP Postfix
+223 [main] ERROR com.wt.smtp.SMTPClient - java.lang.NumberFormatException: For input string: "220-sohumx71_50.sohu.com"
+224 [main] INFO com.wt.smtp.SMTPClient - Fail to send the message from abc@qq.com to wangtaoking1@sohu.com
+5 [main] INFO com.wt.smtp.SMTPClient - Create a smtp client
+122 [main] DEBUG com.wt.smtp.SMTPClient - server: sohumx1.sohu.com	port: 25
+122 [main] INFO com.wt.smtp.SMTPClient - Connecting sohumx1.sohu.com ...
+354 [main] DEBUG com.wt.smtp.SMTPClient - 220-sohumx71_81.sohu.com ESMTP Postfix
+354 [main] ERROR com.wt.smtp.SMTPClient - java.lang.NumberFormatException: For input string: "220-sohumx71_81.sohu.com"
+354 [main] INFO com.wt.smtp.SMTPClient - Fail to send the message from abc@qq.com to wangtaoking1@sohu.com
+4 [main] INFO com.wt.smtp.SMTPClient - Create a smtp client
+122 [main] DEBUG com.wt.smtp.SMTPClient - server: sohumx1.sohu.com	port: 25
+122 [main] INFO com.wt.smtp.SMTPClient - Connecting sohumx1.sohu.com ...
+224 [main] DEBUG com.wt.smtp.SMTPClient - 220-sohumx71_81.sohu.com ESMTP Postfix
+224 [main] ERROR com.wt.smtp.SMTPClient - java.lang.NumberFormatException: For input string: "220-sohumx71_81.sohu.com"
+225 [main] INFO com.wt.smtp.SMTPClient - Fail to send the message from abc@qq.com to wangtaoking1@sohu.com
+6 [main] INFO com.wt.smtp.SMTPClient - Create a smtp client
+132 [main] DEBUG com.wt.smtp.SMTPClient - server: sohumx1.sohu.com	port: 25
+132 [main] INFO com.wt.smtp.SMTPClient - Connecting sohumx1.sohu.com ...
+391 [main] DEBUG com.wt.smtp.SMTPClient - 220-sohumx126_207.sohu.com ESMTP Postfix
+392 [main] ERROR com.wt.smtp.SMTPClient - java.lang.NumberFormatException: For input string: "220-sohumx126_207.sohu.com"
+392 [main] INFO com.wt.smtp.SMTPClient - Fail to send the message from abc@qq.com to wangtaoking1@sohu.com
+4 [main] INFO com.wt.smtp.SMTPClient - Create a smtp client
+117 [main] DEBUG com.wt.smtp.SMTPClient - server: sohumx1.sohu.com	port: 25
+117 [main] INFO com.wt.smtp.SMTPClient - Connecting sohumx1.sohu.com ...
+396 [main] DEBUG com.wt.smtp.SMTPClient - 220-sohumx71_39.sohu.com ESMTP Postfix
+396 [main] ERROR com.wt.smtp.SMTPClient - java.lang.NumberFormatException: For input string: "220-sohumx71_39.sohu.com"
+396 [main] INFO com.wt.smtp.SMTPClient - Fail to send the message from abc@qq.com to wangtaoking1@sohu.com
+4 [main] INFO com.wt.smtp.SMTPClient - Create a smtp client
+124 [main] DEBUG com.wt.smtp.SMTPClient - server: 163mx03.mxmail.netease.com	port: 25
+124 [main] INFO com.wt.smtp.SMTPClient - Connecting 163mx03.mxmail.netease.com ...
+277 [main] DEBUG com.wt.smtp.SMTPClient - 220 163.com Anti-spam GT for Coremail System (163com[20121016])
+278 [main] INFO com.wt.smtp.SMTPClient - Connected 163mx03.mxmail.netease.com successfully
+278 [main] DEBUG com.wt.smtp.SMTPClient - Send 'HELO 163mx03.mxmail.netease.com' to the server successfully
+319 [main] DEBUG com.wt.smtp.SMTPClient - 250 OK
+319 [main] INFO com.wt.smtp.SMTPClient - register the server successfully
+320 [main] DEBUG com.wt.smtp.SMTPClient - Send 'MAIL From:<abc@qq.com>' to the server successfully
+363 [main] DEBUG com.wt.smtp.SMTPClient - 250 Mail OK
+364 [main] DEBUG com.wt.smtp.SMTPClient - Send 'RCPT To:<wangtaoking1@163.com>' to the server successfully
+406 [main] DEBUG com.wt.smtp.SMTPClient - 250 Mail OK
+406 [main] INFO com.wt.smtp.SMTPClient - set envelop successfully
+406 [main] DEBUG com.wt.smtp.SMTPClient - Send 'data' to the server successfully
+448 [main] DEBUG com.wt.smtp.SMTPClient - 354 End data with <CR><LF>.<CR><LF>
+448 [main] DEBUG com.wt.smtp.SMTPClient - Send 'From:<abc@qq.com>
+To:<wangtaoking1@163.com>
+Subject:hello
+hello world!!
+.' to the server successfully
+496 [main] DEBUG com.wt.smtp.SMTPClient - 554 DT:SPM mx47, YcCowECpxEQZXWhUuJXwDw--.470S2 1416125722 http://mail.163.com/help/help_spam_16.htm?ip=113.108.133.43&hostid=mx47&time=1416125722
+496 [main] ERROR com.wt.smtp.SMTPClient - java.lang.Exception: send the body of message fail
+496 [main] INFO com.wt.smtp.SMTPClient - Fail to send the message from abc@qq.com to wangtaoking1@163.com

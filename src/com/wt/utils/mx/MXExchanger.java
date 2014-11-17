@@ -17,7 +17,7 @@ public class MXExchanger {
 	 * @return "The sorted mx records"
 	 * @throws Exception
 	 */
-	public static MXRecord mxLookup(String server) throws Exception{
+	public static ArrayList<MXRecord> mxLookup(String server) throws Exception{
 		
 		ArrayList<MXRecord> mxServers = new ArrayList<MXRecord>();
 		
@@ -29,7 +29,23 @@ public class MXExchanger {
 		}
 		
 		Collections.sort(mxServers, new MXCompare());
-		return mxServers.get(0);
+		return mxServers;
+	}
+	
+	/**
+	 * 
+	 * @param server
+	 * @return "The best mx record from the sorted mx records"
+	 * @throws Exception
+	 */
+	public static String getMxServer(String server) throws Exception {
+		ArrayList<MXRecord> servers = MXExchanger.mxLookup(server);
+		if (servers.isEmpty())
+			return null;
+		
+		//delete the last char '.' in the name of the mx server
+		String sname = servers.get(0).getTarget().toString();
+		return sname.substring(0, sname.length() - 1);
 	}
 	
 }

@@ -8,11 +8,13 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.StringTokenizer;
+import java.util.concurrent.Executors;
 
 import org.apache.log4j.Logger;
 
 import com.wt.utils.LoggerFactory;
 import com.wt.utils.MailMessage;
+import com.wt.utils.mx.MXExchanger;
 
 /**
  * This is a client to send message to server
@@ -42,8 +44,6 @@ public class SMTPClient {
 		if (socket != null) {
 			try {
 				socket.close();
-				input.close();
-				output.close();
 			} catch (Exception e) {
 				logger.error(e);
 			}
@@ -67,7 +67,14 @@ public class SMTPClient {
 		}
 		else
 			port = 25;
-		server = "smtp." + server;
+		try {
+			server = MXExchanger.getMxServer(server);
+		}
+		catch (Exception e) {
+			logger.error(e);
+			server = null;
+		}
+		
 		logger.debug("server: " + server + "\tport: " + String.valueOf(port));
 	}
 	
@@ -100,7 +107,12 @@ public class SMTPClient {
 		}
 		catch (Exception e) {
 			logger.error(e);
+			logger.info("Fail to send the message from " + this.message
+					.getFrom() + " to " + this.message.getTo());
 			flag = false;
+		}
+		finally {
+			this.close();
 		}
 		return flag;
 	}
