@@ -280,3 +280,16 @@ hello world!!
 496 [main] DEBUG com.wt.smtp.SMTPClient - 554 DT:SPM mx47, YcCowECpxEQZXWhUuJXwDw--.470S2 1416125722 http://mail.163.com/help/help_spam_16.htm?ip=113.108.133.43&hostid=mx47&time=1416125722
 496 [main] ERROR com.wt.smtp.SMTPClient - java.lang.Exception: send the body of message fail
 496 [main] INFO com.wt.smtp.SMTPClient - Fail to send the message from abc@qq.com to wangtaoking1@163.com
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server start.
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server start.
+10358 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+23551 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+26051 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+75530 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+76190 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+76784 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+77337 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+77918 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+78404 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+78962 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+79587 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
