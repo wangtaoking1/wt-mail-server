@@ -15,7 +15,7 @@ import com.wt.smtp.receive.MailReceiver;
  * @author wangtao
  * @time 2014/11/17
  */
-public class ServiceThread implements Runnable {
+public class SMTPServiceThread implements Runnable {
     
     private Socket client = null;
     private BufferedReader input = null;
@@ -23,7 +23,7 @@ public class ServiceThread implements Runnable {
     private MailReceiver receiver = null;
     private ServerType type = null;
     
-    public ServiceThread(Socket client, ServerType type) {
+    public SMTPServiceThread(Socket client, ServerType type) {
         this.client = client;
         this.type = type;
     }
@@ -47,9 +47,10 @@ public class ServiceThread implements Runnable {
             SMTPServer.logger.error(e);
         }
         
-        SMTPServer.logger.info("Communicating with the client " + 
-                client.getInetAddress().getHostAddress() + " ...");
+        SMTPServer.logger.info("Connection with the client " + 
+                client.getInetAddress().getHostAddress() + " created");
         
+        //Initial with Helo state
         receiver = new MailReceiver(new HeloState());
         
         while(true) {
@@ -59,8 +60,9 @@ public class ServiceThread implements Runnable {
                 this.receiver.handleInput(this, inStr);
             }
             catch (SocketTimeoutException e) {
+                //Connection timeout
                 SMTPServer.logger.error(e);
-                this.writeToClient("Timeout, Connection closed by server.");
+                this.writeToClient("Timeout");
                 break;
             }
             catch (Exception e) {
@@ -95,7 +97,7 @@ public class ServiceThread implements Runnable {
             }
         }
         
-        SMTPServer.logger.info("Communication with the client " + 
-                client.getInetAddress().getHostAddress() + " finished");
+        SMTPServer.logger.info("Connection with the client " + 
+                client.getInetAddress().getHostAddress() + " closed");
     }
 }

@@ -45,7 +45,6 @@ public class SMTPClientTest {
         MailMessage message = new MailMessage();
         message.setFrom("abc@qq.com");
         message.setTo("wangtaoking1@163.com");
-        message.setSubject("hello");
         message.setContent("hello world!!");
         client.setMessage(message);
 //        try {

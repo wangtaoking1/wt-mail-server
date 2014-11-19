@@ -11,7 +11,9 @@ public class MailMessage {
     private String to;
     private String content;
     
-    public MailMessage() {}
+    public MailMessage() {
+        this.user = new User();
+    }
     public MailMessage(User user) {
         this.user = user;
     }

@@ -28,6 +28,7 @@ public class SMTPServer {
         this.type = type;
         this.port = port;
     }
+    
     /**
      * This function is to start the server
      * @throws IOException
@@ -44,7 +45,7 @@ public class SMTPServer {
             
             //Create a new thread if there is no idle thread;
             //Reuse the old thread if there is a idle thread;
-            service.execute(new ServiceThread(client, this.type));
+            service.execute(new SMTPServiceThread(client, this.type));
         }
     }
     

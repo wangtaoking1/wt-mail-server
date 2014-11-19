@@ -3,19 +3,21 @@ package com.wt.smtp.receive;
 import java.util.regex.Pattern;
 
 import com.wt.smtp.SMTPServer.ServerType;
-import com.wt.smtp.ServiceThread;
+import com.wt.smtp.SMTPServiceThread;
 
 public class HeloState extends State {
 
     @Override
-    public void handle(ServiceThread service, String com, String arg) {
+    public void handle(SMTPServiceThread service, String com, String arg) {
         if (!"helo".equals(com))
         {
-            service.writeToClient("503 Error: send HELO first");
+            service.writeToClient("503 Error: need HELO first");
+            return ;
         }
         if (this.checkEmpty(arg))
         {
             service.writeToClient("501 Invalid argument");
+            return ;
         }
         
         service.writeToClient("220 ok");

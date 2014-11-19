@@ -1,12 +1,10 @@
 package com.wt.smtp.receive;
 
-import java.io.IOException;
-
-import com.wt.smtp.ServiceThread;
+import com.wt.smtp.SMTPServiceThread;
 import com.wt.utils.MailMessage;
 
 public class MailReceiver {
-    private String[] commands = {"helo", "mail", "rcpt", "data", "quit"};
+    private String[] commands = {"helo", "auth", "mail", "rcpt", "data", "quit"};
     private State state;
     private MailMessage message;
     
@@ -32,8 +30,13 @@ public class MailReceiver {
         this.message = message;
     }
     
-    public void handleInput(ServiceThread service, String inStr) {
-        if ((state instanceof SendState) || (state instanceof AuthState)) {
+    /**
+     * Handle the string from the client in connection
+     * @param service "the service thread"
+     * @param inStr
+     */
+    public void handleInput(SMTPServiceThread service, String inStr) {
+        if ((state instanceof SendState) || (state instanceof LoginState)) {
             this.state.handle(service,  inStr);
             return ;
         }
@@ -60,6 +63,9 @@ public class MailReceiver {
      * @return
      */
     private boolean checkCommand(String inStr) {
+        if ("".equals(inStr))
+            return false;
+        
         String com = getCommand(inStr);
         
         for (int i = 0; i < commands.length; i++)

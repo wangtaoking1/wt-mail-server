@@ -1,11 +1,23 @@
 package com.wt.smtp.receive;
 
 
-import com.wt.smtp.ServiceThread;
+import com.wt.smtp.SMTPServiceThread;
 
 public abstract class State {
-    //Handle the input string
-    public abstract void handle(ServiceThread service, String com, String arg);
-
-    public void handle(ServiceThread service, String inStr) {}
+    
+    /**
+     * This function is to handle the command from the client
+     * @param service
+     * @param com
+     * @param arg
+     */
+    public abstract void handle(SMTPServiceThread service, String com, 
+            String arg);
+    
+    /**
+     * This function is to handle the string (not command) from the client
+     * @param service
+     * @param inStr
+     */
+    public void handle(SMTPServiceThread service, String inStr) {}
 }

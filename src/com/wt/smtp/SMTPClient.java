@@ -67,6 +67,7 @@ public class SMTPClient {
         }
         else
             port = 25;
+        
         try {
             server = MXExchanger.getMxServer(server);
         }

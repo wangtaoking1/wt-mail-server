@@ -2,19 +2,21 @@ package com.wt.smtp.receive;
 
 import java.util.regex.Pattern;
 
-import com.wt.smtp.ServiceThread;
+import com.wt.smtp.SMTPServiceThread;
 
 public class DataState extends State {
     
     @Override
-    public void handle(ServiceThread service, String com, String arg) {
+    public void handle(SMTPServiceThread service, String com, String arg) {
         if (!"data".equals(com))
         {
-            service.writeToClient("503 Error: need data command");
+            service.writeToClient("503 Error: need Data command");
+            return ;
         }
         if (!this.checkEmpty(arg))
         {
             service.writeToClient("501 Invalid argument");
+            return ;
         }
         
         service.writeToClient("354 End data with <CR><LF>.<CR><LF>");
