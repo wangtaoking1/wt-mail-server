@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<project name="server" default="runTests" basedir=".">
+	<property name="src.dir" location="src"/>
+	<property name="test.dir" location="test"/>
+	<property name="build.dir" location="classes"/>
+	<property name="lib.dir" location="lib"/>
+	<property name="dest.dir" location="dest"/>
+	<property name="jar_name" value="mail-server.jar"/>
+	
+	<path id="lib_cp">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+
+	<target name="init">
+		<delete dir="${build.dir}" />
+		<delete dir="${dest.dir}" />
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${dest.dir}"/>
+	</target>
+
+
+	<target name="compile" depends="init">
+		<javac srcdir="${src.dir}" destdir="${build.dir}">
+			<classpath refid="lib_cp"/>
+		</javac>
+		<javac srcdir="${test.dir}" destdir="${build.dir}">
+			<classpath refid="lib_cp"/>
+		</javac>
+	</target>
+
+
+	<target name="runTests" depends="compile">
+		<junit printsummary="true">
+			<classpath >
+				<pathelement path="${build.dir}"/>
+                <fileset dir="${lib.dir}">
+                    <include name="**/*.jar"/>
+                </fileset>
+            </classpath>
+            <batchtest fork="yes">
+         		<fileset dir="${test.dir}">
+             		<include name="**/*Test.java"/>
+            	</fileset>
+         	</batchtest>
+        </junit>
+	</target>
+	
+
+	<target name="make_jar" depends="compile">
+		<jar jarfile="${dest.dir}/${jar_name}" basedir="${build.dir}">
+			<manifest>
+				<attribute name="Main-class" value="com.wt.main.MailServer"/>
+				<attribute name="Class-path" value=". ../lib/jarcommons-codec-1.8.jar ../lib/log4j-1.2.17.jar ../lib/org.xbill.dns_2.1.6.jar"/>
+			</manifest>
+		</jar>
+	</target>
+	
+	
+	<target name="run" depends="compile">
+		<java classname="com.wt.main.MailServer" classpath="${build.dir}">
+			<classpath refid="lib_cp"/>
+		</java>
+	</target>
+</project>
+

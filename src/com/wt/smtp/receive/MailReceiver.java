@@ -37,7 +37,7 @@ public class MailReceiver {
      */
     public void handleInput(SMTPServiceThread service, String inStr) {
         if ((state instanceof SendState) || (state instanceof LoginState)) {
-            this.state.handle(service,  inStr);
+            this.state.handle(service, inStr);
             return ;
         }
 

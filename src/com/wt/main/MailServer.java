@@ -15,5 +15,4 @@ public class MailServer {
         (new SMTPServer(SMTPServer.ServerType.FORCLIENT, 465)).start();
         //(new SMTPServer(SMTPServer.ServerType.FORSERVER, 25)).start();
     }
-    
 }

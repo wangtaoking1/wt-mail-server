@@ -1,6 +1,6 @@
 package com.wt.smtp.receive;
 
-import com.sun.org.apache.xml.internal.security.utils.Base64;
+import org.apache.commons.codec.binary.Base64;
 import com.wt.smtp.SMTPServer;
 import com.wt.smtp.SMTPServiceThread;
 import com.wt.utils.User;
@@ -23,18 +23,19 @@ public class LoginState extends State {
         if (this.cur == sta[0]) {
             //username
             try {
-                this.user.setUsername(new String(Base64.decode(inStr)));
+                this.user.setUsername(new String(Base64.decodeBase64(inStr)));
             }
             catch (Exception e) {
                 this.user.setUsername("");
             }
             this.cur = sta[1];
-            service.writeToClient("334 " + Base64.encode("password".getBytes()));
+            service.writeToClient("334 " + Base64.encodeBase64(
+                "password".getBytes()));
         }
         else {
             //password
             try {
-                this.user.setPassword(new String(Base64.decode(inStr)));
+                this.user.setPassword(new String(Base64.decodeBase64(inStr)));
             }
             catch (Exception e) {
                 this.user.setPassword("");

@@ -1,0 +1,39 @@
+4 [main] DEBUG com.wt.main.MailServer - this is debug
+5 [main] INFO com.wt.main.MailServer - this is info
+5 [main] ERROR com.wt.main.MailServer - this is error
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+984619 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+984622 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+1014651 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.net.SocketTimeoutException: Read timed out
+1014660 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+1545843 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+1545843 [pool-1-thread-2] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+1575865 [pool-1-thread-2] ERROR com.wt.smtp.SMTPServer - java.net.SocketTimeoutException: Read timed out
+1575869 [pool-1-thread-2] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+1645896 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+1645897 [pool-1-thread-3] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+1649766 [pool-1-thread-3] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+1649778 [pool-1-thread-3] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+1700740 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+1700740 [pool-1-thread-3] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+1702721 [pool-1-thread-3] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+1702723 [pool-1-thread-3] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+1805873 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+1805874 [pool-1-thread-4] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+1835893 [pool-1-thread-4] ERROR com.wt.smtp.SMTPServer - java.net.SocketTimeoutException: Read timed out
+1835896 [pool-1-thread-4] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+1916085 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+1916086 [pool-1-thread-5] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+1951012 [pool-1-thread-5] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+1951012 [pool-1-thread-5] ERROR com.wt.smtp.SMTPServer - java.net.SocketException: Socket closed
+1951012 [pool-1-thread-5] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+2158910 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+2158919 [pool-1-thread-6] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+2164063 [pool-1-thread-6] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+2164064 [pool-1-thread-6] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+4 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+7997 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+8000 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+8036 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+8052 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed

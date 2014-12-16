@@ -98,7 +98,7 @@ public class SMTPClient {
         try {
             init();
             
-            regist();
+            sayHelo();
             
             setEnvelop();
             
@@ -141,7 +141,7 @@ public class SMTPClient {
      * Register from the server
      * @throws IOException
      */
-    public void regist() throws Exception {
+    public void sayHelo() throws Exception {
         int token = this.sendData("HELO " + this.server);
         
         if (token != 250)

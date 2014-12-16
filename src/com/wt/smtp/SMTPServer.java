@@ -41,7 +41,8 @@ public class SMTPServer {
         
         while(true) {
             Socket client = server.accept();
-            logger.info("A connection from " + client.getInetAddress().getHostAddress());
+            logger.info("A connection from " + client.getInetAddress()
+                .getHostAddress());
             
             //Create a new thread if there is no idle thread;
             //Reuse the old thread if there is a idle thread;

@@ -23,6 +23,7 @@ public class SMTPServiceThread implements Runnable {
     private MailReceiver receiver = null;
     private ServerType type = null;
     
+    
     public SMTPServiceThread(Socket client, ServerType type) {
         this.client = client;
         this.type = type;
@@ -50,6 +51,8 @@ public class SMTPServiceThread implements Runnable {
         SMTPServer.logger.info("Connection with the client " + 
                 client.getInetAddress().getHostAddress() + " created");
         
+        //Send hello info to the client
+        this.writeToClient("220 localhost");
         //Initial with Helo state
         receiver = new MailReceiver(new HeloState());
         
@@ -62,7 +65,7 @@ public class SMTPServiceThread implements Runnable {
             catch (SocketTimeoutException e) {
                 //Connection timeout
                 SMTPServer.logger.error(e);
-                this.writeToClient("Timeout");
+                this.writeToClient("221 Timeout");
                 break;
             }
             catch (Exception e) {
