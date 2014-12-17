@@ -249,3 +249,17 @@
 70054 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: mail from:<abc@qq.com>
 77625 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: quit
 77626 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+4 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+7 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+125346 [main] INFO com.wt.smtp.SMTPServer - A connection from 10.0.2.4
+125360 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 created
+125393 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO 10.0.2.4
+125403 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+125473 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@10.0.2.4>
+125486 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@10.0.2.5>
+125486 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@10.0.2.5>
+125487 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+125492 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+125493 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed

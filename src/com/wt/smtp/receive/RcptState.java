@@ -6,6 +6,8 @@ import com.wt.smtp.SMTPServiceThread;
 import com.wt.smtp.SMTPServer.ServerType;
 import com.wt.utils.MailManager;
 import com.wt.smtp.SMTPServer;
+import com.wt.utils.UserManager;
+
 
 public class RcptState extends State {
 
@@ -27,9 +29,7 @@ public class RcptState extends State {
                 service.writeToClient("550 Wrong mail address");
                 return ;
             }
-            if (!this.getUsername(this.getMail(arg)).equals(
-                        service.getReceiver().getMessage().getUser().getUsername())
-               ) {
+            if (!UserManager.isLocalUser(this.getUsername(this.getMail(arg)))) {
                 service.writeToClient("550 User not found");
                 return ;
             }

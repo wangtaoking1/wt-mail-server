@@ -14,6 +14,6 @@ public class MailServer {
      */
     public static void main(String[] args) throws Exception{
         (new SMTPServer(SMTPServer.ServerType.FORCLIENT, 465)).start();
-        //(new SMTPServer(SMTPServer.ServerType.FORSERVER, 25)).start();
+        (new SMTPServer(SMTPServer.ServerType.FORSERVER, 25)).start();
     }
 }

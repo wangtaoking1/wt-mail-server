@@ -14,6 +14,7 @@ public class SendState extends State {
     public void handle(SMTPServiceThread service, String inStr) {
         if (".".equals(inStr)) {
             service.getReceiver().getMessage().setContent(buffer.toString());
+            
             MailManager.handleMail(service.getReceiver().getMessage());
             
             service.writeToClient("250 ok");

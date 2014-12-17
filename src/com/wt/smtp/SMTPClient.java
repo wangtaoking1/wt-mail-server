@@ -70,7 +70,7 @@ public class SMTPClient {
         //Just for test
         boolean flag = Pattern.matches("^\\d+\\.\\d+\\.\\d+\\.\\d+$|localhost", server);
         if (flag) {
-            port = 465;
+            port = 25;
         } else {
             try {
                 server = MXExchanger.getMxServer(server);
