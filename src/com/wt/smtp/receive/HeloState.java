@@ -20,7 +20,7 @@ public class HeloState extends State {
             return ;
         }
         
-        service.writeToClient("220 ok");
+        service.writeToClient("250 ok");
         
         //State transition according to the server type 
         if (service.getType() == ServerType.FORCLIENT)

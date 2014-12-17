@@ -61,6 +61,9 @@ public class SMTPServiceThread implements Runnable {
                 String inStr = input.readLine();
                 
                 this.receiver.handleInput(this, inStr);
+
+                if (client == null)
+                    break;
             }
             catch (SocketTimeoutException e) {
                 //Connection timeout
@@ -73,7 +76,6 @@ public class SMTPServiceThread implements Runnable {
                 break;
             }
         }
-        
         this.closeConnection();
     }
     
@@ -95,12 +97,12 @@ public class SMTPServiceThread implements Runnable {
             try {
                 this.writeToClient("221 Bye");
                 client.close();
+                SMTPServer.logger.info("Connection with the client " + 
+                    client.getInetAddress().getHostAddress() + " closed");
             } catch (Exception oE) {
                 SMTPServer.logger.error(oE);
             }
+            client = null;
         }
-        
-        SMTPServer.logger.info("Connection with the client " + 
-                client.getInetAddress().getHostAddress() + " closed");
     }
 }

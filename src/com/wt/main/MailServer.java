@@ -1,6 +1,7 @@
 package com.wt.main;
 
 import com.wt.smtp.SMTPServer;
+import java.util.regex.Pattern;
 
 /**
  * @author wangtao

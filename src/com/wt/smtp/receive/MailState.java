@@ -6,6 +6,7 @@ import com.wt.smtp.SMTPServer.ServerType;
 import com.wt.smtp.SMTPServiceThread;
 import com.wt.utils.MailManager;
 import com.wt.utils.UserManager;
+import com.wt.smtp.SMTPServer;
 
 public class MailState extends State {
 
@@ -19,31 +20,35 @@ public class MailState extends State {
             service.writeToClient("501 Invalid argument");
             return ;
         }
-        
+
         //check the mail whether is sent from local or not
         if (service.getType() == ServerType.FORCLIENT) {
             if (!MailManager.isLocalServer(this.getMailAddress(
-                    this.getMail(arg)))) {
+                                               this.getMail(arg)))) {
                 service.writeToClient("550 Wrong mail address");
                 return ;
             }
-            
+
+            // SMTPServer.logger.debug(this.getUsername(this.getMail(arg)));
+            // SMTPServer.logger.debug(service.getReceiver().getMessage()
+            //     .getUser().getUsername());
+
             if (!this.getUsername(this.getMail(arg)).equals(
-                    service.getReceiver().getMessage().getUser().getUsername())
-                    ) {
+                        service.getReceiver().getMessage().getUser().getUsername())
+               ) {
                 service.writeToClient("553 You are not authorized to send " +
-                		"mail, authentication is required");
+                                      "mail, authentication is required");
                 return ;
             }
         }
-        
+
         service.getReceiver().getMessage().setFrom(this.getMail(arg));
-        
-        service.writeToClient("220 ok");
-        
+
+        service.writeToClient("250 Mail OK");
+
         service.getReceiver().setState(new RcptState());
     }
-    
+
     /**
      * Check the validation of the input string
      * @param arg
@@ -53,15 +58,15 @@ public class MailState extends State {
         boolean flag =  Pattern.matches("^\\w+:<\\w+@\\w+(\\.\\w+)*>$", arg);
         if (!flag)
             return false;
-        
+
         int pos = arg.indexOf(":");
         String ahead = arg.substring(0, pos).toLowerCase();
         if (!"from".equals(ahead))
             return false;
-        
+
         return true;
     }
-    
+
     /**
      * Get the mail from the input string
      * @param arg
@@ -70,7 +75,7 @@ public class MailState extends State {
     public String getMail(String arg) {
         return arg.substring(arg.indexOf("<") + 1, arg.indexOf(">"));
     }
-    
+
     /**
      * Get username from the 'from mail'
      * @param mail
@@ -80,7 +85,7 @@ public class MailState extends State {
         int pos = mail.indexOf("@");
         return mail.substring(0, pos);
     }
-    
+
     /**
      * Get mail address from the 'from mail'
      * @param mail

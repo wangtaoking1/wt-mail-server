@@ -42,6 +42,7 @@ public class LoginState extends State {
             }
             
             if (UserManager.authUser(this.user)) {
+                service.getReceiver().getMessage().setUser(this.user);
                 service.writeToClient("235 OK, go ahead");
                 service.getReceiver().setState(new MailState());
             }

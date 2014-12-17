@@ -37,3 +37,215 @@
 8000 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
 8036 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
 8052 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+6 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+320933 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+320945 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+320972 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+320973 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+4 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+6471 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+6473 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+6590 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+6591 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+6 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+7272 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+7276 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+7393 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - xyz
+7393 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - null
+7395 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+7396 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+4 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+4614 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+4619 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+4720 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - xyz
+4720 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - xyz
+4725 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+4726 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+4 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+9665 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+9668 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+9770 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - xyz
+9770 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - xyz
+9793 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+9794 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+4400 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+4407 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+4512 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+4514 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+4514 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+4 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+3601 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+3604 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+3717 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+3717 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - successfully
+3728 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+3729 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+4 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+3906 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+3908 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+4032 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+4032 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - successfully
+4040 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+4040 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+2004 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+2007 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+2112 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+2114 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - to
+2129 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+2130 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+2668 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+2670 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+2766 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+2766 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - true
+2768 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+2768 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+2012 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+2022 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+2142 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+2142 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - asdfasdfafa
+2144 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+2144 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+4 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+3720 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+3725 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+3820 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+3828 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+3829 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+4 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+2546 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+2555 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+2582 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - helo
+2584 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - auth
+2657 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - mail
+2660 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - rcpt
+2660 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+2662 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - data
+2676 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+2676 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+6 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+4553 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+4556 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+4587 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Commands: helo
+4593 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Commands: auth
+4664 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Commands: mail
+4673 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Commands: rcpt
+4673 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+4677 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Commands: data
+4692 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+4693 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+4 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+3806 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+3809 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+3840 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO localhost
+3842 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+3919 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@localhost>
+3921 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@localhost>
+3922 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+3923 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: data
+3925 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+3933 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: null
+3933 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+3934 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+116817 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+116817 [pool-1-thread-2] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+116828 [pool-1-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: HELO localhost
+116829 [pool-1-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+116866 [pool-1-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@localhost>
+116867 [pool-1-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@localhost>
+116867 [pool-1-thread-2] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+116868 [pool-1-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: Data
+116869 [pool-1-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: null
+116870 [pool-1-thread-2] ERROR com.wt.smtp.SMTPServer - java.lang.NullPointerException
+116870 [pool-1-thread-2] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+6 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+4053 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+4060 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+4088 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO localhost
+4090 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+4163 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@localhost>
+4171 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@localhost>
+4172 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+4177 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+4180 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+4180 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+4180 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.net.SocketException: Socket closed
+4184 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+7 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+3287 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+3292 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+3325 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO localhost
+3327 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+3399 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@localhost>
+3402 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@localhost>
+3403 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+3411 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+3414 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+3414 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+3416 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.net.SocketException: Socket closed
+3416 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - sdafjfkadsjfk213lk12l3k123jl
+3416 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+49739 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+49740 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+49741 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO localhost
+49742 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+49783 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@localhost>
+49784 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@localhost>
+49784 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+49790 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+49792 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+49792 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+49792 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.net.SocketException: Socket closed
+49808 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - sdafjfkadsjfk213lk12l3k123jl
+49808 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+2683 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+2686 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+2715 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO localhost
+2720 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+2791 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@localhost>
+2804 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@localhost>
+2804 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+2817 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+2819 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+2819 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+2820 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - this is a test
+2820 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.net.SocketException: Socket closed
+2820 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+4 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+4125 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+4127 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+4162 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO localhost
+4164 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+4235 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@localhost>
+4240 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@localhost>
+4240 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+4247 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+4255 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+4255 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+4256 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - this is a test
+4256 [pool-1-thread-1] ERROR com.wt.smtp.SMTPServer - java.net.SocketException: Socket closed
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+2447 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+2452 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+2477 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO localhost
+2484 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+2548 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@localhost>
+2550 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@localhost>
+2550 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@localhost>
+2552 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+2554 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+2554 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed
+4 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+9888 [main] INFO com.wt.smtp.SMTPServer - A connection from 127.0.0.1
+9891 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 created
+15351 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: helo adsfas
+27011 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: mail from:<abc@qq.com>
+33305 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Auth login
+70054 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: mail from:<abc@qq.com>
+77625 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: quit
+77626 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 127.0.0.1 closed

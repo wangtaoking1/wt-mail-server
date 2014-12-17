@@ -9,6 +9,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.StringTokenizer;
 import java.util.concurrent.Executors;
+import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 
@@ -23,23 +24,23 @@ import com.wt.utils.mx.MXExchanger;
  */
 public class SMTPClient {
     private Logger logger = LoggerFactory.getLogger(SMTPClient.class);
-    
+
     private Socket socket = null;
     private BufferedReader input = null;
     private PrintWriter output = null;
     private String server = null;
     private int port;
     private MailMessage message;
-    
+
     public SMTPClient() {
         logger.info("Create a smtp client");
     }
-    
+
     public SMTPClient(MailMessage message) {
         logger.info("Create a smtp client");
         this.setMessage(message);
     }
-    
+
     public void close() {
         if (socket != null) {
             try {
@@ -49,7 +50,7 @@ public class SMTPClient {
             }
         }
     }
-    
+
     public MailMessage getMessage() {
         return message;
     }
@@ -57,28 +58,31 @@ public class SMTPClient {
         this.message = message;
         this.setServerInfo();
     }
-    
+
     private void setServerInfo() {
         int pos = this.message.getTo().indexOf("@");
         server = this.message.getTo().substring(pos + 1);
-        if ("yahoo.com".equals(server) || "gmail.com".equals(server))
-        {
+        if ("yahoo.com".equals(server) || "gmail.com".equals(server)) {
             port = 465;
-        }
-        else
+        } else
             port = 25;
-        
-        try {
-            server = MXExchanger.getMxServer(server);
+
+        //Just for test
+        boolean flag = Pattern.matches("^\\d+\\.\\d+\\.\\d+\\.\\d+$|localhost", server);
+        if (flag) {
+            port = 465;
+        } else {
+            try {
+                server = MXExchanger.getMxServer(server);
+            } catch (Exception e) {
+                logger.error(e);
+                server = null;
+            }
         }
-        catch (Exception e) {
-            logger.error(e);
-            server = null;
-        }
-        
+
         logger.debug("server: " + server + "\tport: " + String.valueOf(port));
     }
-    
+
     /**
      * Set server information
      * @param server
@@ -88,7 +92,7 @@ public class SMTPClient {
         this.server = server;
         this.port = port;
     }
-    
+
     /**
      * Send the message to the server
      * @return whether the message is sent successfully
@@ -97,22 +101,20 @@ public class SMTPClient {
         boolean flag = true;
         try {
             init();
-            
+
             sayHelo();
-            
+
             setEnvelop();
-            
+
             sendMessage();
-            
+
             quit();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             logger.error(e);
             logger.info("Fail to send the message from " + this.message
-                    .getFrom() + " to " + this.message.getTo());
+                        .getFrom() + " to " + this.message.getTo());
             flag = false;
-        }
-        finally {
+        } finally {
             this.close();
         }
         return flag;
@@ -124,14 +126,13 @@ public class SMTPClient {
      */
     public void init() throws Exception {
         logger.info("Connecting " + server + " ...");
-        
+
         socket = new Socket(server, port);
         input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         output = new PrintWriter(socket.getOutputStream(), true);
-        
+
         int token = getResultToken();
-        if (token != 220)
-        {
+        if (token != 220) {
             throw new Exception("Connected " + server + " fail");
         }
         logger.info("Connected " + server + " successfully");
@@ -143,14 +144,13 @@ public class SMTPClient {
      */
     public void sayHelo() throws Exception {
         int token = this.sendData("HELO " + this.server);
-        
-        if (token != 250)
-        {
+
+        if (token != 250) {
             throw new Exception("register the server fail");
         }
         logger.info("register the server successfully");
     }
-    
+
     /**
      * Set the mail from and to
      * @throws Exception
@@ -160,15 +160,15 @@ public class SMTPClient {
         int token = this.sendData("MAIL From:<" + this.message.getFrom() + ">");
         if (token != 250)
             throw new Exception("set envelop fail");
-        
+
         //set the mail to
         token = this.sendData("RCPT To:<" + this.message.getTo() + ">");
         if (token != 250)
             throw new Exception("set envelop fail");
-        
+
         logger.info("set envelop successfully");
     }
-    
+
     /**
      * Send the content of the mail message
      * @throws Exception
@@ -177,29 +177,28 @@ public class SMTPClient {
         int token = this.sendData("data");
         if (token != 354)
             throw new Exception("send 'data' command fail");
-        
+
         token = this.sendData(this.message.getContent() + "\n.");
         if (token != 250)
             throw new Exception("send the body of message fail");
-        
+
         logger.info("send the message successfully");
     }
-    
+
     /**
      * Quit from the connection with the server
      * @throws Exception
      */
     public void quit() throws Exception {
         int token = this.sendData("QUIT");
-        
-        if (token != 221)
-        {
+
+        if (token != 221) {
             throw new Exception("quit fail");
         }
         logger.info("quit successfully");
-        
+
     }
-    
+
     /**
      * Send message to server
      * @param data "the data needed to send to the server"
@@ -208,26 +207,25 @@ public class SMTPClient {
     private int sendData(String data) throws IOException {
         this.output.println(data);
         this.output.flush();
-        
+
         logger.debug("Send '" + data + "' to the server successfully");
         return this.getResultToken();
     }
-    
+
     /**
-     * 
+     *
      * @return "the token of the returned string"
      */
     private int getResultToken() {
         String line = "";
         try {
             line = this.input.readLine();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             logger.error(e);
         }
-        
+
         logger.debug(line);
-        
+
         StringTokenizer get = new StringTokenizer(line, " ");
         return Integer.parseInt(get.nextToken());
     }
