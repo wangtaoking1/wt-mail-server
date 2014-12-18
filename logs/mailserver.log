@@ -263,3 +263,322 @@
 125487 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
 125492 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
 125493 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+16387 [main] INFO com.wt.smtp.SMTPServer - A connection from 10.0.2.4
+16398 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 created
+16430 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO 10.0.2.4
+16432 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+16491 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@10.0.2.4>
+16499 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@10.0.2.5>
+16500 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@10.0.2.5>
+16512 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+16514 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+16515 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+10386 [main] INFO com.wt.smtp.SMTPServer - A connection from 10.0.2.4
+10391 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 created
+10407 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO 10.0.2.4
+10423 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+10489 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@10.0.2.4>
+10499 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@10.0.2.5>
+10499 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@10.0.2.5>
+10500 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+10515 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - hello world
+10552 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - .
+10554 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+10554 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed
+4 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+5785 [main] INFO com.wt.smtp.SMTPServer - A connection from 10.0.2.4
+5788 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 created
+5801 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO 10.0.2.4
+5803 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+5871 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@10.0.2.4>
+5874 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@10.0.2.5>
+5874 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@10.0.2.5>
+5875 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+5916 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+5917 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+3767 [main] INFO com.wt.smtp.SMTPServer - A connection from 10.0.2.4
+3774 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 created
+3797 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO 10.0.2.4
+3798 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+3865 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@10.0.2.4>
+3867 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@10.0.2.5>
+3867 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@10.0.2.5>
+3868 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+0 [pool-1-thread-1] INFO com.wt.smtp.SMTPClient - Create a smtp client
+1 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPClient - server: 10.0.2.5	port: 25
+1 [pool-1-thread-1] INFO com.wt.smtp.SMTPClient - Connecting 10.0.2.5 ...
+9 [pool-1-thread-1] ERROR com.wt.smtp.SMTPClient - java.net.ConnectException: 拒绝连接
+10 [pool-1-thread-1] INFO com.wt.smtp.SMTPClient - Fail to send the message from xyz@10.0.2.4 to abc@10.0.2.5
+3921 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - send successfully
+3924 [pool-1-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+3930 [pool-1-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed
+5 [main] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+6 [Thread-0] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+12 [Thread-1] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+7 [Thread-0] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+9 [Thread-1] INFO com.wt.smtp.SMTPServer - SMTP server starting...
+11819 [Thread-0] INFO com.wt.smtp.SMTPServer - A connection from 10.0.2.4
+11829 [pool-2-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 created
+11864 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO 10.0.2.4
+11866 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+11940 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@10.0.2.4>
+11943 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@10.0.2.5>
+11943 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@10.0.2.5>
+11951 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+0 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - Create a smtp client
+0 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - server: 10.0.2.5	port: 25
+1 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - Connecting 10.0.2.5 ...
+14 [pool-2-thread-1] ERROR com.wt.smtp.SMTPClient - java.net.ConnectException: 拒绝连接
+14 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - Fail to send the message from xyz@10.0.2.4 to abc@10.0.2.5
+12014 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - send successfully
+12014 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+12019 [pool-2-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed
+7 [Thread-0] INFO com.wt.smtp.SMTPServer - SMTP server starting at port 465 ...
+8 [Thread-1] INFO com.wt.smtp.SMTPServer - SMTP server starting at port 25 ...
+6 [Thread-0] INFO com.wt.smtp.SMTPServer - SMTP server fot client starting at port 465 ...
+8 [Thread-1] INFO com.wt.smtp.SMTPServer - SMTP server fot server starting at port 25 ...
+6 [Thread-0] INFO com.wt.smtp.SMTPServer - SMTP server fot client starting at port 465 ...
+7 [Thread-1] INFO com.wt.smtp.SMTPServer - SMTP server fot server starting at port 25 ...
+9197 [Thread-0] INFO com.wt.smtp.SMTPServer - A connection from 10.0.2.4
+9207 [pool-2-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 created
+9233 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO 10.0.2.4
+9244 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+9312 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@10.0.2.4>
+9314 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@10.0.2.5>
+9314 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@10.0.2.5>
+9316 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+1 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - Create a smtp client
+1 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - server: 10.0.2.5	port: 25
+1 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - Connecting 10.0.2.5 ...
+24 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 220 localhost
+25 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - Connected 10.0.2.5 successfully
+25 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - Send 'HELO 10.0.2.5' to the server successfully
+34 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 250 ok
+35 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - say helo to the server successfully
+35 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - Send 'MAIL From:<xyz@10.0.2.4>' to the server successfully
+43 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 250 Mail OK
+43 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - Send 'RCPT To:<abc@10.0.2.5>' to the server successfully
+44 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 550 Wrong mail address
+44 [pool-2-thread-1] ERROR com.wt.smtp.SMTPClient - java.lang.Exception: set envelop fail
+45 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - Fail to send the message from xyz@10.0.2.4 to abc@10.0.2.5
+9406 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - send successfully
+9414 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+9421 [pool-2-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed
+7 [Thread-0] INFO com.wt.smtp.SMTPServer - SMTP server fot client starting at port 465 ...
+8 [Thread-1] INFO com.wt.smtp.SMTPServer - SMTP server fot server starting at port 25 ...
+7603 [Thread-0] INFO com.wt.smtp.SMTPServer - A connection from 10.0.2.4
+7619 [pool-2-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 created
+7657 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO 10.0.2.4
+7662 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+7747 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@10.0.2.4>
+7753 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@10.0.2.5>
+7753 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<abc@10.0.2.5>
+7754 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+0 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - Create a smtp client
+0 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - server: 10.0.2.5	port: 25
+1 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - Connecting 10.0.2.5 ...
+18 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 220 localhost
+19 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - Connected 10.0.2.5 successfully
+20 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - Send 'HELO 10.0.2.5' to the server successfully
+23 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 250 ok
+23 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - say helo to the server successfully
+23 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - Send 'MAIL From:<xyz@10.0.2.4>' to the server successfully
+24 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 250 Mail OK
+24 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - Send 'RCPT To:<abc@10.0.2.5>' to the server successfully
+28 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 250 Rcpt OK
+28 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - set envelop successfully
+28 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - Send 'Data' to the server successfully
+29 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 354 End data with <CR><LF>.<CR><LF>
+36 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - Send 'hello world
+' to the server successfully
+36 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - Send '.' to the server successfully
+76 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 250 ok
+76 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - send the message successfully
+77 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - Send 'QUIT' to the server successfully
+77 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 221 Bye
+78 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 221
+78 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - quit successfully
+7872 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - send successfully
+7873 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+7877 [pool-2-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed
+80739 [Thread-0] INFO com.wt.smtp.SMTPServer - A connection from 10.0.2.4
+80739 [pool-2-thread-2] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 created
+80746 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: HELO 10.0.2.4
+80747 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+80785 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@10.0.2.4>
+80786 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@10.0.2.5>
+80786 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - To:<abc@10.0.2.5>
+80787 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: Data
+73032 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Create a smtp client
+1 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Create a smtp client
+73032 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - server: 10.0.2.5	port: 25
+1 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - server: 10.0.2.5	port: 25
+73032 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Connecting 10.0.2.5 ...
+1 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Connecting 10.0.2.5 ...
+73039 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 220 localhost
+8 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 220 localhost
+73039 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Connected 10.0.2.5 successfully
+8 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Connected 10.0.2.5 successfully
+73040 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'HELO 10.0.2.5' to the server successfully
+9 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'HELO 10.0.2.5' to the server successfully
+73041 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 ok
+10 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 ok
+73041 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - say helo to the server successfully
+10 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - say helo to the server successfully
+73041 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'MAIL From:<xyz@10.0.2.4>' to the server successfully
+10 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'MAIL From:<xyz@10.0.2.4>' to the server successfully
+73047 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 Mail OK
+16 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 Mail OK
+73048 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'RCPT To:<abc@10.0.2.5>' to the server successfully
+17 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'RCPT To:<abc@10.0.2.5>' to the server successfully
+73048 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 Rcpt OK
+17 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 Rcpt OK
+73049 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - set envelop successfully
+18 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - set envelop successfully
+73049 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'Data' to the server successfully
+18 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'Data' to the server successfully
+73050 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 354 End data with <CR><LF>.<CR><LF>
+19 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 354 End data with <CR><LF>.<CR><LF>
+73050 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'hello world
+' to the server successfully
+19 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'hello world
+' to the server successfully
+73051 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send '.' to the server successfully
+20 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send '.' to the server successfully
+73088 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 ok
+57 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 ok
+73089 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - send the message successfully
+58 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - send the message successfully
+73089 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'QUIT' to the server successfully
+58 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'QUIT' to the server successfully
+73103 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 221 Bye
+72 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 221 Bye
+73104 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 221
+73 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 221
+73104 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - quit successfully
+73 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - quit successfully
+80899 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - send successfully
+80909 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+80921 [pool-2-thread-2] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed
+86285 [Thread-0] INFO com.wt.smtp.SMTPServer - A connection from 10.0.2.4
+86285 [pool-2-thread-2] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 created
+86291 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: HELO 10.0.2.4
+86292 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+86353 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<xyz@10.0.2.4>
+86353 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<abc@10.0.2.5>
+86353 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - To:<abc@10.0.2.5>
+86356 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: Data
+78607 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Create a smtp client
+5576 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Create a smtp client
+0 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Create a smtp client
+78607 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - server: 10.0.2.5	port: 25
+5576 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - server: 10.0.2.5	port: 25
+0 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - server: 10.0.2.5	port: 25
+78608 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Connecting 10.0.2.5 ...
+5577 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Connecting 10.0.2.5 ...
+1 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Connecting 10.0.2.5 ...
+78610 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 220 localhost
+5579 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 220 localhost
+3 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 220 localhost
+78610 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Connected 10.0.2.5 successfully
+5579 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Connected 10.0.2.5 successfully
+3 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Connected 10.0.2.5 successfully
+78612 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'HELO 10.0.2.5' to the server successfully
+5581 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'HELO 10.0.2.5' to the server successfully
+5 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'HELO 10.0.2.5' to the server successfully
+78613 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 ok
+5582 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 ok
+6 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 ok
+78622 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - say helo to the server successfully
+5591 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - say helo to the server successfully
+15 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - say helo to the server successfully
+78623 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'MAIL From:<xyz@10.0.2.4>' to the server successfully
+5592 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'MAIL From:<xyz@10.0.2.4>' to the server successfully
+16 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'MAIL From:<xyz@10.0.2.4>' to the server successfully
+78623 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 Mail OK
+5592 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 Mail OK
+16 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 Mail OK
+78624 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'RCPT To:<abc@10.0.2.5>' to the server successfully
+5593 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'RCPT To:<abc@10.0.2.5>' to the server successfully
+17 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'RCPT To:<abc@10.0.2.5>' to the server successfully
+78625 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 Rcpt OK
+5594 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 Rcpt OK
+18 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 Rcpt OK
+78625 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - set envelop successfully
+5594 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - set envelop successfully
+18 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - set envelop successfully
+78626 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'Data' to the server successfully
+5595 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'Data' to the server successfully
+19 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'Data' to the server successfully
+78626 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 354 End data with <CR><LF>.<CR><LF>
+5595 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 354 End data with <CR><LF>.<CR><LF>
+19 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 354 End data with <CR><LF>.<CR><LF>
+78627 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'hello world
+' to the server successfully
+5596 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'hello world
+' to the server successfully
+20 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'hello world
+' to the server successfully
+78630 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send '.' to the server successfully
+5599 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send '.' to the server successfully
+23 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send '.' to the server successfully
+78667 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 ok
+5636 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 ok
+60 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 ok
+78668 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - send the message successfully
+5637 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - send the message successfully
+61 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - send the message successfully
+78668 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'QUIT' to the server successfully
+5637 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'QUIT' to the server successfully
+61 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'QUIT' to the server successfully
+78669 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 221 Bye
+5638 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 221 Bye
+62 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 221 Bye
+78670 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 221
+5639 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 221
+63 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 221
+78670 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - quit successfully
+5639 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - quit successfully
+63 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - quit successfully
+86466 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - send successfully
+86467 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+86477 [pool-2-thread-2] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed
+3 [main] DEBUG com.wt.main.MailServer - this is debug
+3 [main] INFO com.wt.main.MailServer - this is info
+4 [main] ERROR com.wt.main.MailServer - this is error
+3 [main] DEBUG com.wt.main.MailServer - this is debug
+4 [main] INFO com.wt.main.MailServer - this is info
+4 [main] ERROR com.wt.main.MailServer - this is error
+3 [main] DEBUG com.wt.main.MailServer - this is debug
+4 [main] INFO com.wt.main.MailServer - this is info
+4 [main] ERROR com.wt.main.MailServer - this is error
+3 [main] DEBUG com.wt.main.MailServer - this is debug
+4 [main] INFO com.wt.main.MailServer - this is info
+4 [main] ERROR com.wt.main.MailServer - this is error
+4 [main] DEBUG com.wt.main.MailServer - this is debug
+5 [main] INFO com.wt.main.MailServer - this is info
+5 [main] ERROR com.wt.main.MailServer - this is error
+3 [main] DEBUG com.wt.main.MailServer - this is debug
+4 [main] INFO com.wt.main.MailServer - this is info
+4 [main] ERROR com.wt.main.MailServer - this is error
+4 [main] DEBUG com.wt.main.MailServer - this is debug
+5 [main] INFO com.wt.main.MailServer - this is info
+5 [main] ERROR com.wt.main.MailServer - this is error
+4 [main] DEBUG com.wt.main.MailServer - this is debug
+4 [main] INFO com.wt.main.MailServer - this is info
+5 [main] ERROR com.wt.main.MailServer - this is error
+3 [main] DEBUG com.wt.main.MailServer - this is debug
+4 [main] INFO com.wt.main.MailServer - this is info
+5 [main] ERROR com.wt.main.MailServer - this is error
+5 [main] DEBUG com.wt.main.MailServer - this is debug
+5 [main] INFO com.wt.main.MailServer - this is info
+5 [main] ERROR com.wt.main.MailServer - this is error
+5 [main] DEBUG com.wt.main.MailServer - this is debug
+6 [main] INFO com.wt.main.MailServer - this is info
+6 [main] ERROR com.wt.main.MailServer - this is error
+3 [main] DEBUG com.wt.main.MailServer - this is debug
+3 [main] INFO com.wt.main.MailServer - this is info
+4 [main] ERROR com.wt.main.MailServer - this is error

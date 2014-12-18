@@ -15,50 +15,64 @@ import com.wt.utils.LoggerFactory;
  * @author wangtao
  * @time 2014/11/17
  */
-public class SMTPServer {
+public class SMTPServer implements Runnable {
     private int port = 25;
     private ServerSocket server = null;
     private Executor service = null;
     public static enum ServerType {FORCLIENT, FORSERVER};
     private ServerType type = null;
-    
+
     public static Logger logger = LoggerFactory.getLogger(SMTPServer.class);
-    
+
     public SMTPServer(ServerType type, int port) {
         this.type = type;
         this.port = port;
     }
-    
+
+
+    @Override
+    public void run() {
+        try {
+            this.start();
+        } catch (IOException e) {
+            logger.error(e);
+        }
+        this.stop();
+    }
+
+
     /**
      * This function is to start the server
      * @throws IOException
      */
-    public void start() throws IOException {
-        logger.info("SMTP server starting...");
+    private void start() throws IOException {
+        if (this.type == ServerType.FORCLIENT)
+            logger.info("SMTP server fot client starting at port " + this.port + " ...");
+        else
+            logger.info("SMTP server fot server starting at port " + this.port + " ...");
         
         server = new ServerSocket(port);
         service = Executors.newCachedThreadPool();
-        
-        while(true) {
+
+        while (true) {
             Socket client = server.accept();
             logger.info("A connection from " + client.getInetAddress()
-                .getHostAddress());
-            
+                        .getHostAddress());
+
             //Create a new thread if there is no idle thread;
             //Reuse the old thread if there is a idle thread;
             service.execute(new SMTPServiceThread(client, this.type));
         }
     }
-    
+
     /**
      * This function is to stop the server
      */
-    public void stop() {
+    private void stop() {
         if (server != null) {
             try {
                 server.close();
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 SMTPServer.logger.error(e);
             }
         }

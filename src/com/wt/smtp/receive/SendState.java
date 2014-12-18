@@ -1,6 +1,7 @@
 package com.wt.smtp.receive;
 
 import com.wt.smtp.SMTPServiceThread;
+import com.wt.smtp.SMTPServer;
 import com.wt.utils.MailManager;
 import com.wt.utils.MailMessage;
 

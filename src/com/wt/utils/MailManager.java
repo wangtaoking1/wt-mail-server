@@ -22,6 +22,7 @@ public class MailManager {
             //TODO: store the mail into databases
             SMTPClient client = new SMTPClient(message);
             boolean flag = client.sendMail();
+            SMTPServer.logger.debug("send successfully");
 
             if (!flag) {
                 //TODO: Add the mail to Sending_Queue
@@ -35,7 +36,10 @@ public class MailManager {
      * @return true or false
      */
     public static boolean isLocalServer(String server) {
-        return true;
+        if (server.equals("10.0.2.4")) {
+            return true;
+        }
+        return false;
     }
 
     /**
