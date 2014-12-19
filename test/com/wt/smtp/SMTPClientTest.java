@@ -1,4 +1,4 @@
-package com.wt.utils;
+package com.wt.smtp;
 
 import static org.junit.Assert.*;
 import junit.framework.Assert;
@@ -53,13 +53,6 @@ public class SMTPClientTest {
 //        }catch (Exception e){}
 //        client.close();
         // Assert.assertTrue(client.sendMail());
-        System.out.println("OK");
-        Assert.assertTrue(true);
-    }
-
-    @Test
-    public void testSetServerInfo() {
-        System.out.println("OK");
         Assert.assertTrue(true);
     }
 }
