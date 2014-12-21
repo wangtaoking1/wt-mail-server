@@ -47,9 +47,9 @@ public class SMTPServer implements Runnable {
      */
     private void start() throws IOException {
         if (this.type == ServerType.FORCLIENT)
-            logger.info("SMTP server fot client starting at port " + this.port + " ...");
+            logger.info("SMTP server for client starting at port " + this.port + " ...");
         else
-            logger.info("SMTP server fot server starting at port " + this.port + " ...");
+            logger.info("SMTP server for server starting at port " + this.port + " ...");
         
         server = new ServerSocket(port);
         service = Executors.newCachedThreadPool();

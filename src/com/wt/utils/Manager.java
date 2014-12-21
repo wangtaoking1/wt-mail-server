@@ -116,4 +116,29 @@ public class Manager {
         MysqlDriver driver = new MysqlDriver();
         return driver.hasUser(username);
     }
+
+    /**
+     * To register user
+     * @param username
+     * @param password
+     * @return
+     */
+    public static boolean register(String username, String password) {
+        MysqlDriver driver = new MysqlDriver();
+        return driver.registerUser(username, password);
+    }
+    
+    /**
+     * To unregister user
+     * @param username
+     * @param password
+     * @return
+     */
+    public static boolean unRegister(String username, String password) {
+        MysqlDriver driver = new MysqlDriver();
+        if (driver.authUser(username, password)) {
+            return driver.deleteUser(username);
+        }
+        return false;
+    }
 }

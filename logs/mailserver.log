@@ -661,3 +661,36 @@
 301 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
 323 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
 8 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+3 [Thread-0] INFO com.wt.smtp.SMTPServer - SMTP server for client starting at port 465 ...
+5 [Thread-1] INFO com.wt.smtp.SMTPServer - SMTP server for server starting at port 25 ...
+13 [Thread-1] ERROR com.wt.smtp.SMTPServer - java.net.BindException: 权限不够
+13 [Thread-0] ERROR com.wt.smtp.SMTPServer - java.net.BindException: 权限不够
+7 [Thread-0] INFO com.wt.common.ManageServer - Server for user manage starting at port 5055 ...
+17005 [Thread-0] INFO com.wt.common.ManageServer - A connection from 127.0.0.1
+27577 [Thread-0] INFO com.wt.common.ManageServer - A connection from 127.0.0.1
+281 [Thread-0] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user (username, password) VALUES ('wangtao', 'abcd');
+62887 [Thread-0] INFO com.wt.common.ManageServer - A connection from 127.0.0.1
+31543 [Thread-0] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='wangtao';
+17 [Thread-0] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='wangtao';
+72145 [Thread-0] INFO com.wt.common.ManageServer - A connection from 127.0.0.1
+39657 [Thread-0] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='wangtao';
+8131 [Thread-0] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='wangtao';
+7 [Thread-0] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='wangtao';
+39659 [Thread-0] DEBUG com.wt.utils.MysqlDriver - DELETE FROM user WHERE username='wangtao';
+8133 [Thread-0] DEBUG com.wt.utils.MysqlDriver - DELETE FROM user WHERE username='wangtao';
+9 [Thread-0] DEBUG com.wt.utils.MysqlDriver - DELETE FROM user WHERE username='wangtao';
+89969 [Thread-0] INFO com.wt.common.ManageServer - A connection from 127.0.0.1
+58157 [Thread-0] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+26631 [Thread-0] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+18507 [Thread-0] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+13 [Thread-0] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+58158 [Thread-0] DEBUG com.wt.utils.MysqlDriver - DELETE FROM user WHERE username='test0';
+26632 [Thread-0] DEBUG com.wt.utils.MysqlDriver - DELETE FROM user WHERE username='test0';
+18508 [Thread-0] DEBUG com.wt.utils.MysqlDriver - DELETE FROM user WHERE username='test0';
+14 [Thread-0] DEBUG com.wt.utils.MysqlDriver - DELETE FROM user WHERE username='test0';
+103818 [Thread-0] INFO com.wt.common.ManageServer - A connection from 127.0.0.1
+70762 [Thread-0] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user (username, password) VALUES ('test0', 'test0');
+39236 [Thread-0] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user (username, password) VALUES ('test0', 'test0');
+31112 [Thread-0] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user (username, password) VALUES ('test0', 'test0');
+12618 [Thread-0] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user (username, password) VALUES ('test0', 'test0');
+16 [Thread-0] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user (username, password) VALUES ('test0', 'test0');

@@ -11,7 +11,7 @@ import org.apache.log4j.*;
  *
  */
 public class LoggerFactory {
-
+    private static String logPath = "logs/mailserver.log";
     /**
      * @param clazz "the class needed to print log"
      * @return
@@ -19,14 +19,21 @@ public class LoggerFactory {
     public static Logger getLogger(Class clazz) {
         Logger logger = Logger.getLogger(clazz);
 
-        logger.setLevel(Level.DEBUG);
+        ConfigParser parser = new ConfigParser("wt_mail.properties");
+        if (parser.getOption("Debug").equals("true"))
+            logger.setLevel(Level.DEBUG);
+        else
+            logger.setLevel(Level.INFO);
+        
+        if (!parser.getOption("logs_path").equals(""))
+            logPath = parser.getOption("logs_path");
 
         //output to file
         FileAppender appender1 = null;
         //output to console
         ConsoleAppender appender2 = null;
         try {
-            appender1 = new FileAppender(new TTCCLayout(), "logs/mailserver.log");
+            appender1 = new FileAppender(new TTCCLayout(), logPath);
             appender2 = new ConsoleAppender(new TTCCLayout());
         } catch (IOException e) {
             e.printStackTrace();

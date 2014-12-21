@@ -78,6 +78,27 @@ public class MysqlDriver {
     
     
     /**
+     * To delete a user
+     * @param user
+     * @param pw
+     * @return success or fail
+     */
+    public boolean deleteUser(String username) {
+        String sql = "DELETE FROM user WHERE username='" + username + "';";
+        
+        logger.debug(sql);
+        
+        try {
+            this.stmt.executeUpdate(sql);
+            return true;
+        }
+        catch (SQLException e) {
+            logger.error(e);
+            return false;
+        }
+    }
+    
+    /**
      * To store the message into database
      * @param message
      * @param user
