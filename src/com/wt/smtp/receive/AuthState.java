@@ -4,7 +4,6 @@ import org.apache.commons.codec.binary.Base64;
 import com.wt.smtp.SMTPServer;
 import com.wt.smtp.SMTPServiceThread;
 import com.wt.utils.User;
-import com.wt.utils.UserManager;
 
 public class AuthState extends State {
     @Override

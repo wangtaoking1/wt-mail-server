@@ -602,3 +602,62 @@
 6 [Thread-1] INFO com.wt.smtp.SMTPServer - SMTP server fot server starting at port 25 ...
 11 [Thread-1] ERROR com.wt.smtp.SMTPServer - java.net.BindException: 权限不够
 11 [Thread-0] ERROR com.wt.smtp.SMTPServer - java.net.BindException: 权限不够
+437 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user (username, password) VALUES (test0, test0)
+449 [main] ERROR com.wt.utils.MysqlDriver - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'test0' in 'field list'
+294 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user(username, password) VALUES ('test0', 'test0')
+303 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user(username, password) VALUES ('test0', 'test0')
+318 [main] ERROR com.wt.utils.MysqlDriver - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'test0' for key 'PRIMARY'
+347 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@localhost', 'xyz@localhost', 0, 'test0')
+365 [main] ERROR com.wt.utils.MysqlDriver - java.sql.SQLException: Before start of result set
+365 [main] ERROR com.wt.utils.MysqlDriver - Get the mail id failed.
+380 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user (username, password) VALUES ('test0', 'test0');
+14 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user (username, password) VALUES ('test0', 'test0');
+381 [main] ERROR com.wt.utils.MysqlDriver - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'test0' for key 'PRIMARY'
+15 [main] ERROR com.wt.utils.MysqlDriver - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'test0' for key 'PRIMARY'
+308 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@localhost', 'xyz@localhost', 0, 'test0');
+323 [main] ERROR com.wt.utils.MysqlDriver - java.sql.SQLException: Before start of result set
+323 [main] ERROR com.wt.utils.MysqlDriver - Get the mail id failed.
+302 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@localhost', 'xyz@localhost', 0, 'test0');
+311 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 4, 'hello wolrd!!')
+354 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@localhost', 'xyz@localhost', 0, 'test0');
+17 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@localhost', 'xyz@localhost', 0, 'test0');
+364 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 5, 'hello wolrd!!')
+27 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 5, 'hello wolrd!!')
+359 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@localhost', 'xyz@localhost', 0, 'test0');
+20 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@localhost', 'xyz@localhost', 0, 'test0');
+371 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 7, 'hello wolrd!!')
+32 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 7, 'hello wolrd!!')
+325 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@localhost', 'xyz@localhost', 0, 'test0');
+14 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@localhost', 'xyz@localhost', 0, 'test0');
+349 [main] ERROR com.wt.utils.MysqlDriver - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`wt_mail`.`mail_info`, CONSTRAINT `username` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON DELETE CASCADE ON UPDATE NO ACTION)
+38 [main] ERROR com.wt.utils.MysqlDriver - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`wt_mail`.`mail_info`, CONSTRAINT `username` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON DELETE CASCADE ON UPDATE NO ACTION)
+350 [main] ERROR com.wt.utils.MysqlDriver - Get the mail id failed.
+39 [main] ERROR com.wt.utils.MysqlDriver - Get the mail id failed.
+313 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@localhost', 'xyz@localhost', 0, 'test0');
+329 [main] ERROR com.wt.utils.MysqlDriver - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`wt_mail`.`mail_info`, CONSTRAINT `username` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON DELETE CASCADE ON UPDATE NO ACTION)
+312 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@localhost', 'xyz@localhost', 0, 'test0');
+328 [main] ERROR com.wt.utils.MysqlDriver - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`wt_mail`.`mail_info`, CONSTRAINT `username` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON DELETE CASCADE ON UPDATE NO ACTION)
+345 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user (username, password) VALUES ('test0', 'test0');
+13 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user (username, password) VALUES ('test0', 'test0');
+304 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@localhost', 'xyz@localhost', 0, 'test0');
+313 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 11, 'hello wolrd!!')
+339 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user (username, password) VALUES ('test0', 'test0');
+24 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user (username, password) VALUES ('test0', 'test0');
+348 [main] ERROR com.wt.utils.MysqlDriver - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'test0' for key 'PRIMARY'
+33 [main] ERROR com.wt.utils.MysqlDriver - com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry 'test0' for key 'PRIMARY'
+311 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+328 [main] DEBUG com.wt.utils.MysqlDriver - INSERT INTO user (username, password) VALUES ('test0', 'test0');
+330 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+302 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+308 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+312 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+293 [main] DEBUG com.wt.utils.MysqlDriver - test0 : test
+294 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+312 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+306 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+344 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+365 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test';
+16 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test';
+301 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+323 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+8 [main] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';

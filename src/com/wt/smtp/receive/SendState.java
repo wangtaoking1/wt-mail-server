@@ -2,7 +2,7 @@ package com.wt.smtp.receive;
 
 import com.wt.smtp.SMTPServiceThread;
 import com.wt.smtp.SMTPServer;
-import com.wt.utils.MailManager;
+import com.wt.utils.Manager;
 import com.wt.utils.MailMessage;
 
 public class SendState extends State {
@@ -16,7 +16,7 @@ public class SendState extends State {
         if (".".equals(inStr)) {
             service.getReceiver().getMessage().setContent(buffer.toString());
             
-            MailManager.handleMail(service.getReceiver().getMessage());
+            Manager.handleMail(service.getReceiver().getMessage());
             
             service.writeToClient("250 ok");
             

@@ -13,7 +13,9 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 
+import com.wt.utils.ConfigParser;
 import com.wt.utils.LoggerFactory;
+import com.wt.utils.Manager;
 import com.wt.utils.MailMessage;
 import com.wt.utils.mx.MXExchanger;
 
@@ -67,8 +69,7 @@ public class SMTPClient {
         } else
             port = 25;
 
-        //Just for test
-        boolean flag = Pattern.matches("^\\d+\\.\\d+\\.\\d+\\.\\d+$|localhost", server);
+        boolean flag = Manager.isMyServer(server);
         if (flag) {
             port = 25;
         } else {
@@ -128,7 +129,8 @@ public class SMTPClient {
         logger.info("Connecting " + server + " ...");
 
         socket = new Socket(server, port);
-        input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        input = new BufferedReader(new InputStreamReader(
+                    socket.getInputStream()));
         output = new PrintWriter(socket.getOutputStream(), true);
 
         int token = getResultToken();

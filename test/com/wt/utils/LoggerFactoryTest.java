@@ -16,7 +16,7 @@ public class LoggerFactoryTest {
         logger.debug("this is debug");
         logger.info("this is info");
         logger.error("this is error");
-        
+
         Assert.assertTrue(true);
     }
 

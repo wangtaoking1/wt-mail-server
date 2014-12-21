@@ -4,7 +4,7 @@ import org.apache.commons.codec.binary.Base64;
 import com.wt.smtp.SMTPServer;
 import com.wt.smtp.SMTPServiceThread;
 import com.wt.utils.User;
-import com.wt.utils.UserManager;
+import com.wt.utils.Manager;
 
 public class LoginState extends State {
     private String[] sta = {"username", "password"};
@@ -41,7 +41,7 @@ public class LoginState extends State {
                 this.user.setPassword("");
             }
             
-            if (UserManager.authUser(this.user)) {
+            if (Manager.authUser(this.user)) {
                 service.getReceiver().getMessage().setUser(this.user);
                 service.writeToClient("235 OK, go ahead");
                 service.getReceiver().setState(new MailState());

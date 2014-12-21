@@ -1,0 +1,137 @@
+20 [Thread-0] INFO com.wt.smtp.SMTPServer - SMTP server fot client starting at port 465 ...
+21 [Thread-1] INFO com.wt.smtp.SMTPServer - SMTP server fot server starting at port 25 ...
+4795 [Thread-0] INFO com.wt.smtp.SMTPServer - A connection from 10.0.2.4
+4799 [pool-2-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 created
+4805 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO 10.0.2.4
+4808 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+526 [pool-2-thread-1] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+5378 [pool-2-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed
+45961 [Thread-0] INFO com.wt.smtp.SMTPServer - A connection from 10.0.2.4
+45961 [pool-2-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 created
+45963 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO 10.0.2.4
+45963 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+41151 [pool-2-thread-1] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+12 [pool-2-thread-1] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+45999 [pool-2-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed
+62840 [Thread-0] INFO com.wt.smtp.SMTPServer - A connection from 10.0.2.4
+62841 [pool-2-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 created
+62843 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: HELO 10.0.2.4
+62844 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+58040 [pool-2-thread-1] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+16901 [pool-2-thread-1] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+10 [pool-2-thread-1] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+62888 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<test0@10.0.2.4>
+62904 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<test1@10.0.2.6>
+62904 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - To:<test1@10.0.2.6>
+62919 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: Data
+58146 [pool-2-thread-1] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@10.0.2.4', 'test1@10.0.2.6', 0, 'test0');
+17007 [pool-2-thread-1] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@10.0.2.4', 'test1@10.0.2.6', 0, 'test0');
+116 [pool-2-thread-1] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@10.0.2.4', 'test1@10.0.2.6', 0, 'test0');
+24 [pool-2-thread-1] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@10.0.2.4', 'test1@10.0.2.6', 0, 'test0');
+58175 [pool-2-thread-1] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 13, 'hello world
+')
+17036 [pool-2-thread-1] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 13, 'hello world
+')
+145 [pool-2-thread-1] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 13, 'hello world
+')
+53 [pool-2-thread-1] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 13, 'hello world
+')
+0 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - Create a smtp client
+0 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - server: 10.0.2.6	port: 25
+1 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - Connecting 10.0.2.6 ...
+11 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 220 localhost
+11 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - Connected 10.0.2.6 successfully
+11 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - Send 'HELO 10.0.2.6' to the server successfully
+21 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 250 ok
+21 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - say helo to the server successfully
+21 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - Send 'MAIL From:<test0@10.0.2.4>' to the server successfully
+23 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 250 Mail OK
+23 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - Send 'RCPT To:<test1@10.0.2.6>' to the server successfully
+466 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPClient - 550 User not found
+466 [pool-2-thread-1] ERROR com.wt.smtp.SMTPClient - java.lang.Exception: set envelop fail
+466 [pool-2-thread-1] INFO com.wt.smtp.SMTPClient - Fail to send the message from test0@10.0.2.4 to test1@10.0.2.6
+63494 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - send successfully
+63495 [pool-2-thread-1] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+63496 [pool-2-thread-1] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed
+239186 [Thread-0] INFO com.wt.smtp.SMTPServer - A connection from 10.0.2.4
+239187 [pool-2-thread-2] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 created
+239188 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: HELO 10.0.2.4
+239189 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: AUTH LOGIN
+234384 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+193245 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+176354 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+176262 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+17 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - SELECT * FROM user WHERE username='test0';
+239230 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: MAIL From:<test0@10.0.2.4>
+239231 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: RCPT To:<test1@10.0.2.6>
+239231 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - To:<test1@10.0.2.6>
+239232 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: Data
+234433 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@10.0.2.4', 'test1@10.0.2.6', 0, 'test0');
+193294 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@10.0.2.4', 'test1@10.0.2.6', 0, 'test0');
+176403 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@10.0.2.4', 'test1@10.0.2.6', 0, 'test0');
+176311 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@10.0.2.4', 'test1@10.0.2.6', 0, 'test0');
+66 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@10.0.2.4', 'test1@10.0.2.6', 0, 'test0');
+7 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - INSERT INTO mail_info VALUES (null, 'test0@10.0.2.4', 'test1@10.0.2.6', 0, 'test0');
+234437 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 14, 'hello world
+')
+193298 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 14, 'hello world
+')
+176407 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 14, 'hello world
+')
+176315 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 14, 'hello world
+')
+70 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 14, 'hello world
+')
+11 [pool-2-thread-2] DEBUG com.wt.utils.MysqlDriver - INSERT INTO message VALUES (null, 14, 'hello world
+')
+176266 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Create a smtp client
+1 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Create a smtp client
+176266 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - server: 10.0.2.6	port: 25
+1 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - server: 10.0.2.6	port: 25
+176267 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Connecting 10.0.2.6 ...
+2 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Connecting 10.0.2.6 ...
+176270 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 220 localhost
+5 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 220 localhost
+176270 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Connected 10.0.2.6 successfully
+5 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - Connected 10.0.2.6 successfully
+176270 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'HELO 10.0.2.6' to the server successfully
+5 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'HELO 10.0.2.6' to the server successfully
+176271 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 ok
+6 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 ok
+176271 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - say helo to the server successfully
+6 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - say helo to the server successfully
+176271 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'MAIL From:<test0@10.0.2.4>' to the server successfully
+6 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'MAIL From:<test0@10.0.2.4>' to the server successfully
+176272 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 Mail OK
+7 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 Mail OK
+176272 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'RCPT To:<test1@10.0.2.6>' to the server successfully
+7 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'RCPT To:<test1@10.0.2.6>' to the server successfully
+176284 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 Rcpt OK
+19 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 Rcpt OK
+176284 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - set envelop successfully
+19 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - set envelop successfully
+176284 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'Data' to the server successfully
+19 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'Data' to the server successfully
+176285 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 354 End data with <CR><LF>.<CR><LF>
+20 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 354 End data with <CR><LF>.<CR><LF>
+176285 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'hello world
+' to the server successfully
+20 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'hello world
+' to the server successfully
+176291 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send '.' to the server successfully
+26 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send '.' to the server successfully
+176351 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 ok
+86 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 250 ok
+176351 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - send the message successfully
+86 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - send the message successfully
+176352 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'QUIT' to the server successfully
+87 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - Send 'QUIT' to the server successfully
+176353 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 221 Bye
+88 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 221 Bye
+176353 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 221
+88 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPClient - 221
+176354 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - quit successfully
+89 [pool-2-thread-2] INFO com.wt.smtp.SMTPClient - quit successfully
+239382 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - send successfully
+239382 [pool-2-thread-2] DEBUG com.wt.smtp.SMTPServer - Command: QUIT
+239382 [pool-2-thread-2] INFO com.wt.smtp.SMTPServer - Connection with the client 10.0.2.4 closed

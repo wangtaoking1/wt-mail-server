@@ -4,8 +4,7 @@ import java.util.regex.Pattern;
 
 import com.wt.smtp.SMTPServer.ServerType;
 import com.wt.smtp.SMTPServiceThread;
-import com.wt.utils.MailManager;
-import com.wt.utils.UserManager;
+import com.wt.utils.Manager;
 import com.wt.smtp.SMTPServer;
 
 public class MailState extends State {
@@ -23,8 +22,8 @@ public class MailState extends State {
 
         //check the mail whether is sent from local or not
         if (service.getType() == ServerType.FORCLIENT) {
-            if (!MailManager.isLocalServer(this.getMailAddress(
-                                               this.getMail(arg)))) {
+            if (!Manager.isLocalServer(Manager.getMailServer(
+                    this.getMail(arg)))) {
                 service.writeToClient("550 Wrong mail address");
                 return ;
             }
@@ -33,7 +32,7 @@ public class MailState extends State {
             // SMTPServer.logger.debug(service.getReceiver().getMessage()
             //     .getUser().getUsername());
 
-            if (!this.getUsername(this.getMail(arg)).equals(
+            if (!Manager.getMailUser(this.getMail(arg)).equals(
                         service.getReceiver().getMessage().getUser().getUsername())
                ) {
                 service.writeToClient("553 You are not authorized to send " +
@@ -74,26 +73,6 @@ public class MailState extends State {
      */
     public String getMail(String arg) {
         return arg.substring(arg.indexOf("<") + 1, arg.indexOf(">"));
-    }
-
-    /**
-     * Get username from the 'from mail'
-     * @param mail
-     * @return
-     */
-    public String getUsername(String mail) {
-        int pos = mail.indexOf("@");
-        return mail.substring(0, pos);
-    }
-
-    /**
-     * Get mail address from the 'from mail'
-     * @param mail
-     * @return
-     */
-    public String getMailAddress(String mail) {
-        int pos = mail.indexOf("@");
-        return mail.substring(pos + 1);
     }
 
 }

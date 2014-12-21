@@ -4,9 +4,8 @@ import java.util.regex.Pattern;
 
 import com.wt.smtp.SMTPServiceThread;
 import com.wt.smtp.SMTPServer.ServerType;
-import com.wt.utils.MailManager;
+import com.wt.utils.Manager;
 import com.wt.smtp.SMTPServer;
-import com.wt.utils.UserManager;
 
 
 public class RcptState extends State {
@@ -24,12 +23,12 @@ public class RcptState extends State {
 
         //check the mail whether is sent to local or not
         if (service.getType() == ServerType.FORSERVER) {
-            if (!MailManager.isLocalServer(this.getMailAddress(
+            if (!Manager.isLocalServer(Manager.getMailServer(
                                                this.getMail(arg)))) {
                 service.writeToClient("550 Wrong mail address");
                 return ;
             }
-            if (!UserManager.isLocalUser(this.getUsername(this.getMail(arg)))) {
+            if (!Manager.isLocalUser(Manager.getMailUser(this.getMail(arg)))) {
                 service.writeToClient("550 User not found");
                 return ;
             }
@@ -68,26 +67,6 @@ public class RcptState extends State {
      */
     public String getMail(String arg) {
         return arg.substring(arg.indexOf("<") + 1, arg.indexOf(">"));
-    }
-
-    /**
-     * Get username from the 'to mail'
-     * @param mail
-     * @return
-     */
-    public String getUsername(String mail) {
-        int pos = mail.indexOf("@");
-        return mail.substring(0, pos);
-    }
-
-    /**
-     * Get mail address from the 'to mail'
-     * @param mail
-     * @return
-     */
-    public String getMailAddress(String mail) {
-        int pos = mail.indexOf("@");
-        return mail.substring(pos + 1);
     }
 
 }
