@@ -1,4 +1,4 @@
-package com.wt.smtp.receive;
+package com.wt.smtp.state;
 
 import org.apache.commons.codec.binary.Base64;
 import com.wt.smtp.SMTPServer;

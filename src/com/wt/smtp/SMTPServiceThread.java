@@ -7,8 +7,8 @@ import java.net.Socket;
 import java.net.SocketTimeoutException;
 
 import com.wt.smtp.SMTPServer.ServerType;
-import com.wt.smtp.receive.HeloState;
-import com.wt.smtp.receive.MailReceiver;
+import com.wt.smtp.state.HeloState;
+import com.wt.smtp.state.SmtpReceiver;
 
 /**
  * This is a thread class to accept the message from the client
@@ -20,7 +20,7 @@ public class SMTPServiceThread implements Runnable {
     private Socket client = null;
     private BufferedReader input = null;
     private PrintWriter output = null;
-    private MailReceiver receiver = null;
+    private SmtpReceiver receiver = null;
     private ServerType type = null;
     
     
@@ -33,7 +33,7 @@ public class SMTPServiceThread implements Runnable {
     public ServerType getType() {
         return this.type;
     }
-    public MailReceiver getReceiver() {
+    public SmtpReceiver getReceiver() {
         return this.receiver;
     }
     
@@ -52,9 +52,10 @@ public class SMTPServiceThread implements Runnable {
                 client.getInetAddress().getHostAddress() + " created");
         
         //Send hello info to the client
-        this.writeToClient("220 localhost");
+        this.writeToClient("220 Welcome to wt-mail smtp Server");
+        
         //Initial with Helo state
-        receiver = new MailReceiver(new HeloState());
+        receiver = new SmtpReceiver(new HeloState());
         
         while(true) {
             try {
@@ -68,7 +69,6 @@ public class SMTPServiceThread implements Runnable {
             catch (SocketTimeoutException e) {
                 //Connection timeout
                 SMTPServer.logger.error(e);
-                this.writeToClient("221 Timeout");
                 break;
             }
             catch (Exception e) {

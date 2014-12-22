@@ -20,7 +20,8 @@ public class LoggerFactory {
         Logger logger = Logger.getLogger(clazz);
 
         ConfigParser parser = new ConfigParser("wt_mail.properties");
-        if (parser.getOption("Debug").equals("true"))
+        if (parser.getOption("debug") != null && parser.getOption("debug")
+                .equals("true"))
             logger.setLevel(Level.DEBUG);
         else
             logger.setLevel(Level.INFO);

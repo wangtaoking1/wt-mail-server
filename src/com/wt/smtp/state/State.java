@@ -1,4 +1,4 @@
-package com.wt.smtp.receive;
+package com.wt.smtp.state;
 
 
 import com.wt.smtp.SMTPServiceThread;

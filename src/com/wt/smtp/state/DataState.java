@@ -1,4 +1,4 @@
-package com.wt.smtp.receive;
+package com.wt.smtp.state;
 
 import java.util.regex.Pattern;
 

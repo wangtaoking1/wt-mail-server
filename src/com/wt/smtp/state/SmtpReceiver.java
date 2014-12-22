@@ -1,18 +1,18 @@
-package com.wt.smtp.receive;
+package com.wt.smtp.state;
 
 import com.wt.smtp.SMTPServer;
 import com.wt.smtp.SMTPServiceThread;
 import com.wt.utils.MailMessage;
 
-public class MailReceiver {
+public class SmtpReceiver {
     private String[] commands = {"helo", "auth", "mail", "rcpt", "data", "quit"};
     private State state;
     private MailMessage message;
 
-    public MailReceiver() {
+    public SmtpReceiver() {
         this.message = new MailMessage();
     }
-    public MailReceiver(State state) {
+    public SmtpReceiver(State state) {
         this.state = state;
         this.message = new MailMessage();
     }

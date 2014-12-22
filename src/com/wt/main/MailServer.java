@@ -2,6 +2,7 @@ package com.wt.main;
 
 import org.apache.log4j.Logger;
 
+import com.wt.common.ManageServer;
 import com.wt.smtp.SMTPServer;
 import com.wt.utils.LoggerFactory;
 
@@ -17,14 +18,19 @@ public class MailServer {
     public static void main(String[] args) {
         logger.info("server starting ...");
         Thread smtpForClient = new Thread(new SMTPServer(
-                                                SMTPServer.ServerType.FORCLIENT, 465));
+                SMTPServer.ServerType.FORCLIENT, 465));
         Thread smtpForServer = new Thread(new SMTPServer(
-                                                SMTPServer.ServerType.FORSERVER, 25));
+                SMTPServer.ServerType.FORSERVER, 25));
+        Thread manageServer = new Thread(new ManageServer(5055));
+        
         smtpForClient.start();
         smtpForServer.start();
+        manageServer.start();
+        
         try {
             smtpForClient.join();
             smtpForServer.join();
+            manageServer.join();
         }
         catch (Exception e) {
             logger.error(e);

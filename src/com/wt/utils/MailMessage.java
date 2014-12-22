@@ -46,4 +46,16 @@ public class MailMessage {
         this.content = content;
     }
     
+    /**
+     * To get the mail header
+     * @return
+     */
+    public String getHeader() {
+        String[] items = this.content.split("\n\n");
+        return items[0];
+    }
+    
+    public int getBytes() {
+        return this.content.length();
+    }
 }

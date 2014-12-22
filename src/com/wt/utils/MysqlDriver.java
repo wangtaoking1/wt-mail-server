@@ -108,9 +108,10 @@ public class MysqlDriver {
     public boolean storeMail(MailMessage message, String user, 
             Manager.MailRole role) {
         char flag = (role == Manager.MailRole.SENDER ? '0' : '1');
-        String sql = "INSERT INTO mail_info VALUES (null, '" + message
-                .getFrom() + "', '" + message.getTo() + "', " + flag + ", '"+
-                user + "');";
+        String sql = "INSERT INTO mail_info VALUES (null, '" + user + "', b'" +
+                flag + "', '" + message.getFrom() + "', '" + message.getTo() +
+                "', '" + message.getHeader() + "', " + message.getBytes() + 
+                ");";
         logger.debug(sql);
         
         int mail_id = -1;
@@ -128,7 +129,7 @@ public class MysqlDriver {
         }
         
         sql = "INSERT INTO message VALUES (null, " + mail_id + ", '" 
-                + message.getContent() + "')";
+                + message.getContent() + "', b'0');";
         logger.debug(sql);
         
         try {

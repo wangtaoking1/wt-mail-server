@@ -14,14 +14,13 @@ import org.apache.log4j.Logger;
  */
 public class ConfigParser {
     private Properties prop = null;
-    private Logger logger = LoggerFactory.getLogger(ConfigParser.class);
 
     public ConfigParser(String path) {
         prop = new Properties();
         try {
             prop.load(new FileInputStream(path));
         } catch (IOException e) {
-            logger.error(e);
+            System.out.println(e);
         }
     }
 
