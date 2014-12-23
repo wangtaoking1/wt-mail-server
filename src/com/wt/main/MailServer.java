@@ -2,7 +2,7 @@ package com.wt.main;
 
 import org.apache.log4j.Logger;
 
-import com.wt.common.ManageServer;
+import com.wt.manage.ManageServer;
 import com.wt.smtp.SMTPServer;
 import com.wt.utils.LoggerFactory;
 

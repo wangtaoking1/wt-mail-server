@@ -1,4 +1,4 @@
-package com.wt.common;
+package com.wt.manage;
 
 import java.io.BufferedReader;
 import java.io.IOException;

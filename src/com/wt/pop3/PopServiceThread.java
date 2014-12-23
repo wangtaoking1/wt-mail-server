@@ -26,9 +26,9 @@ public class PopServiceThread implements Runnable {
         this.client = client;
     }
     
-//    public MailReceiver getReceiver() {
-//        return this.receiver;
-//    }
+    public PopReceiver getReceiver() {
+        return this.receiver;
+    }
     
     @Override
     public void run() {

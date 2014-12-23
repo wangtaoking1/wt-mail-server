@@ -1,6 +1,7 @@
 package com.wt.pop3.state;
 
 import com.wt.pop3.PopServiceThread;
+import com.wt.utils.User;
 
 public class PopReceiver {
     private String[] commands = {"user", "pass", "stat", "list", "retr", 
@@ -8,6 +9,10 @@ public class PopReceiver {
     private State state = null;
     
     public PopReceiver(State state) {
+        this.state = state;
+    }
+    
+    public void setState(State state) {
         this.state = state;
     }
     
@@ -21,13 +26,20 @@ public class PopReceiver {
         String[] args = inStr.split("\\s+");
         String cmd = args[0].toLowerCase();
         if (!checkCommand(cmd)) {
-            service.writeToClient("-ERR Command not implemented");
+            service.writeToClient("-ERR Unknown command");
+            return ;
         }
         
         if ("quit".equals(cmd)) {
             this.state.synWithDB();
+            service.writeToClient("+OK Bye");
             service.closeConnection();
             return;
+        }
+        
+        if ("noop".equals(cmd)) {
+            service.writeToClient("+OK");
+            return ;
         }
         
         state.handle(service, args);

@@ -141,4 +141,14 @@ public class Manager {
         }
         return false;
     }
+    
+    /**
+     * To get the current mail status
+     * @return
+     */
+    public static String getMailStatus(Manager.MailRole role) {
+        MysqlDriver driver = new MysqlDriver();
+        return driver.getStatus(role);
+    }
+    
 }

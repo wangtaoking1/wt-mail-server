@@ -107,11 +107,10 @@ public class MysqlDriver {
      */
     public boolean storeMail(MailMessage message, String user, 
             Manager.MailRole role) {
-        char flag = (role == Manager.MailRole.SENDER ? '0' : '1');
         String sql = "INSERT INTO mail_info VALUES (null, '" + user + "', b'" +
-                flag + "', '" + message.getFrom() + "', '" + message.getTo() +
-                "', '" + message.getHeader() + "', " + message.getBytes() + 
-                ");";
+                role.ordinal() + "', '" + message.getFrom() + "', '" + 
+                message.getTo() + "', '" + message.getHeader() + "', " + 
+                message.getBytes() + ");";
         logger.debug(sql);
         
         int mail_id = -1;
@@ -207,6 +206,36 @@ public class MysqlDriver {
         catch (Exception e) {
             logger.error(e);
             return false;
+        }
+    }
+    
+    /**
+     * To get the current mail status
+     * @param role
+     * @return
+     */
+    public String getStatus(Manager.MailRole role) {
+        String sql = "SELECT Count(*), Sum(bytes) FROM mail_info " + 
+                "WHERE role=" + role.ordinal() + ";";
+        
+        try {
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                int cnt = rs.getInt(1);
+                //When there are no mails
+                if (cnt == 0)
+                    return "0 0";
+                else {
+                    int bytes = rs.getInt(2);
+                    return cnt + " " + bytes;
+                }
+            }
+            else
+                return "0 0";
+        }
+        catch (Exception e) {
+            logger.error(e);
+            return "0 0";
         }
     }
 }
