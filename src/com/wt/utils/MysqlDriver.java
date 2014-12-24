@@ -346,24 +346,41 @@ public class MysqlDriver {
         return buffer.toString();
     }
     
+    
     /**
-     * To get the mail content with number num
-     * @param role
-     * @param num
+     * To read the mail
+     * @param id
      * @return
      */
-    public String getMailMessage(MailRole role, int num) {
-        String sql = "SELECT mail_info.mail_id, message.content FROM mail_info"
-                + ", message WHERE role=" + role.ordinal() + 
-                " and mail_info.mail_id=message.mail_id;";
+    public boolean readMail(int id) {
+        String sql = "UPDATE message SET readed=b'1' WHERE mail_id=" + id +";";
+        
+        logger.debug(sql);
+        
+        try {
+            this.stmt.executeUpdate(sql);
+            return true;
+        }
+        catch (SQLException e) {
+            logger.error(e);
+            return false;
+        }
+    }
+    
+    /**
+     * To get the mail content with mail_id id
+     * @param id
+     * @return
+     */
+    public String getMailMessage(int id) {
+        String sql = "SELECT content FROM message WHERE mail_id=" + id + ";";
         
         logger.debug(sql);
         
         try {
             ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                if (num == rs.getRow())
-                    return rs.getString("content");
+            if (rs.next()) {
+                return rs.getString("content");
             }
         }
         catch (Exception e) {
@@ -414,6 +431,28 @@ public class MysqlDriver {
         catch (SQLException e) {
             logger.error(e);
             return false;
+        }
+    }
+    
+    /**
+     * To get the content of the message with the mail_id
+     * @param id
+     * @return
+     */
+    public String getMessageContent(int id) {
+        String sql = "SELECT content FROM message WHERE mail_id=" + id + ";";
+        logger.debug(sql);
+        
+        try {
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                return rs.getString("content");
+            }
+            return "";
+        }
+        catch (Exception e) {
+            logger.error(e);
+            return "";
         }
     }
 }

@@ -8,6 +8,11 @@ import com.wt.utils.Manager;
 import com.wt.utils.Manager.MailRole;
 import com.wt.utils.User;
 
+/**
+ * The second state of pop3 service
+ * @author wangtao
+ * @time 2014/12/23
+ */
 public class ApplyState extends State {
     private User user = null;
     private ArrayList<Integer> delQue = null;
@@ -48,7 +53,8 @@ public class ApplyState extends State {
     @Override
     public void synWithDB() {
         // TODO: syn operation with db
-        ArrayList<Integer> del_ids = Manager.getMailIDs(MailRole.RECEIVER, delQue);
+        ArrayList<Integer> del_ids = Manager.getMailIDs(MailRole.RECEIVER, 
+                delQue);
         for (int id : del_ids) {
             Manager.delMail(id);
         }
@@ -93,7 +99,7 @@ public class ApplyState extends State {
             service.writeToClient("+OK " + num + " " + bytes);
         }
         else {
-            service.writeToClient(Manager.getMailStatus(
+            service.writeToClient("+OK " + Manager.getMailStatus(
                     Manager.MailRole.RECEIVER));
             service.writeToClient(Manager.getMailStatusList() + ".");
         }
@@ -149,7 +155,32 @@ public class ApplyState extends State {
      * @param args
      */
     private void applyTOP(PopServiceThread service, String[] args) {
+        if (args.length != 3) {
+            service.writeToClient("-ERR Syntax error");
+            return ;
+        }
         
+        if (!this.checkMailNum(MailRole.RECEIVER, args[1])) {
+            service.writeToClient("-ERR error arguments");
+            return ;
+        }
+        
+        int num = 0;
+        try {
+            num = Integer.parseInt(args[2]);
+        }
+        catch (Exception e) {
+            service.writeToClient("-ERR error arguments");
+            return ;
+        }
+        
+        //Get mail id
+        int id = Manager.getMailID(MailRole.RECEIVER, Integer.parseInt(
+                args[1]));
+        
+        //Get header and top num lines content
+        String content = Manager.getTopContend(id, num);
+        service.writeToClient(content + ".");
     }
     
     

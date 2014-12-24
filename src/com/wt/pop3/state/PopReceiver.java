@@ -3,6 +3,11 @@ package com.wt.pop3.state;
 import com.wt.pop3.PopServiceThread;
 import com.wt.utils.User;
 
+/**
+ * The state receiver of pop3 service
+ * @author wangtao
+ * @time 2014/12/23
+ */
 public class PopReceiver {
     private String[] commands = {"user", "pass", "stat", "list", "retr", 
                             "dele", "top", "noop", "quit"};

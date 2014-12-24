@@ -190,7 +190,9 @@ public class Manager {
      */
     public static String getMailMessage(MailRole role, int num) {
         MysqlDriver driver = new MysqlDriver();
-        return driver.getMailMessage(role, num);
+        int id = Manager.getMailID(role, num);
+        driver.readMail(id);
+        return driver.getMailMessage(id);
     }
     
     /**
@@ -213,6 +215,19 @@ public class Manager {
     
     
     /**
+     * To get the mail id of number cnt mail
+     * @param role
+     * @param cnt
+     * @return
+     */
+    public static int getMailID(MailRole role, int cnt) {
+        MysqlDriver driver = new MysqlDriver();
+        ArrayList<Integer> ids = driver.getMailIDs(role);
+        return ids.get(cnt);
+    }
+    
+    
+    /**
      * To delete mail with the id
      * @param id
      */
@@ -222,4 +237,25 @@ public class Manager {
     }
     
     
+    /**
+     * To get the header and the top num line
+     * @param id
+     * @param lines
+     * @return
+     */
+    public static String getTopContend(int id, int num) {
+        MysqlDriver driver = new MysqlDriver();
+        String content = driver.getMessageContent(id);
+        
+        String[] items = content.split("\n\n", 2);
+        StringBuffer retBuf = new StringBuffer();
+        retBuf.append(items[0] + "\n\n");
+        
+        String[] lines = items[1].split("\n");
+        for (int i = 1; i <= num && i <=lines.length; i++)
+            retBuf.append(lines[i - 1] + "\n");
+        
+        return retBuf.toString();
+    }
 }
+

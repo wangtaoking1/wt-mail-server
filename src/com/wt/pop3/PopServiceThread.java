@@ -89,7 +89,6 @@ public class PopServiceThread implements Runnable {
       //close the client
         if (client != null) {
             try {
-                this.writeToClient("221 Bye");
                 client.close();
                 PopServer.logger.info("Connection with the client " + 
                     client.getInetAddress().getHostAddress() + " closed");

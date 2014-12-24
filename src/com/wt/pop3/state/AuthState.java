@@ -4,6 +4,11 @@ import com.wt.pop3.PopServiceThread;
 import com.wt.utils.Manager;
 import com.wt.utils.User;
 
+/**
+ * The auth state of pop3 service
+ * @author wangtao
+ * @time 2014/12/23
+ */
 public class AuthState extends State {
     private String cur = null;
     private User user = null;
