@@ -1,5 +1,7 @@
 package com.wt.utils;
 
+import java.util.ArrayList;
+
 import com.wt.smtp.SMTPClient;
 import com.wt.smtp.SMTPServer;
 
@@ -150,5 +152,74 @@ public class Manager {
         MysqlDriver driver = new MysqlDriver();
         return driver.getStatus(role);
     }
+    
+    /**
+     * To get the number of mails
+     * @param role
+     * @return
+     */
+    public static int getMailCount(MailRole role) {
+        MysqlDriver driver = new MysqlDriver();
+        return driver.getMailCount(role);
+    }
+    
+    /**
+     * To get the total bytes of mails
+     * @param n
+     * @return
+     */
+    public static int getBytes(int n) {
+        MysqlDriver driver = new MysqlDriver();
+        return driver.getMailBytes(n);
+    }
+    
+    /**
+     * To get the list of mails
+     * @return
+     */
+    public static String getMailStatusList() {
+        MysqlDriver driver = new MysqlDriver();
+        return driver.getMailStatusList();
+    }
+    
+    /**
+     * To get the mail content with number num
+     * @param role
+     * @param num
+     * @return
+     */
+    public static String getMailMessage(MailRole role, int num) {
+        MysqlDriver driver = new MysqlDriver();
+        return driver.getMailMessage(role, num);
+    }
+    
+    /**
+     * To get the mail ids with the que
+     * @param que
+     * @return
+     */
+    public static ArrayList<Integer> getMailIDs(MailRole role, 
+            ArrayList<Integer> que) {
+        MysqlDriver driver = new MysqlDriver();
+        ArrayList<Integer> ids = driver.getMailIDs(role);
+        ArrayList<Integer> mail_ids = new ArrayList<Integer>();
+        for (int i = 1; i <= ids.size(); i++) {
+            if (que.contains(i)) {
+                mail_ids.add(ids.get(i - 1));
+            }
+        }
+        return mail_ids;
+    }
+    
+    
+    /**
+     * To delete mail with the id
+     * @param id
+     */
+    public static void delMail(int id) {
+        MysqlDriver driver = new MysqlDriver();
+        driver.deleteMail(id);
+    }
+    
     
 }

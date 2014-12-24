@@ -5,8 +5,11 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
+
+import com.wt.utils.Manager.MailRole;
 
 /**
  * MysqlDriver is to communicate with mysql
@@ -191,6 +194,8 @@ public class MysqlDriver {
         String sql = "SELECT * FROM user WHERE username='" +username + "';"; 
         logger.debug(sql);
         
+        logger.debug(sql);
+        
         try {
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
@@ -218,6 +223,8 @@ public class MysqlDriver {
         String sql = "SELECT Count(*), Sum(bytes) FROM mail_info " + 
                 "WHERE role=" + role.ordinal() + ";";
         
+        logger.debug(sql);
+        
         try {
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
@@ -236,6 +243,177 @@ public class MysqlDriver {
         catch (Exception e) {
             logger.error(e);
             return "0 0";
+        }
+    }
+    
+    /**
+     * To get the count of mails
+     * @param role
+     * @return
+     */
+    public int getMailCount(Manager.MailRole role) {
+        String sql = "SELECT Count(*) FROM mail_info " + 
+                "WHERE role=" + role.ordinal() + ";";
+        
+        logger.debug(sql);
+        
+        try {
+            ResultSet rs = stmt.executeQuery(sql);
+            if (rs.next()) {
+                int cnt = rs.getInt(1);
+                return cnt;
+            }
+            else
+                return 0;
+        }
+        catch (Exception e) {
+            logger.error(e);
+            return 0;
+        }
+    }
+    
+    
+    /**
+     * To get the bytes of mails
+     * @param n "mail number"
+     * @return
+     */
+    public int getMailBytes(int n) {
+        if (n == 0) {
+            String sql = "SELECT Sum(bytes) FROM mail_info " + 
+                    "WHERE role=1;";
+            
+            logger.debug(sql);
+            
+            try {
+                ResultSet rs = stmt.executeQuery(sql);
+                if (rs.next()) {
+                    int cnt = rs.getInt(1);
+                    return cnt;
+                }
+                else
+                    return 0;
+            }
+            catch (Exception e) {
+                logger.error(e);
+                return 0;
+            }
+        }
+        else {
+            String sql = "SELECT bytes FROM mail_info " + 
+                    "WHERE role=1;";
+            
+            logger.debug(sql);
+            
+            try {
+                ResultSet rs = stmt.executeQuery(sql);
+                if (rs.next()) {
+                    int cnt = rs.getInt(n);
+                    return cnt;
+                }
+                else
+                    return 0;
+            }
+            catch (Exception e) {
+                logger.error(e);
+                return 0;
+            }
+        }
+    }
+    
+    /**
+     * To the list of mails status
+     * @return
+     */
+    public String getMailStatusList() {
+        String sql = "SELECT bytes FROM mail_info " + 
+                "WHERE role=1;";
+        
+        logger.debug(sql);
+        
+        StringBuffer buffer = new StringBuffer();
+        try {
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                int rid = rs.getRow();
+                int cnt = rs.getInt("bytes");
+                buffer.append(rid + " " + cnt + "\n");
+            }
+        }
+        catch (Exception e) {
+            logger.error(e);
+        }
+        return buffer.toString();
+    }
+    
+    /**
+     * To get the mail content with number num
+     * @param role
+     * @param num
+     * @return
+     */
+    public String getMailMessage(MailRole role, int num) {
+        String sql = "SELECT mail_info.mail_id, message.content FROM mail_info"
+                + ", message WHERE role=" + role.ordinal() + 
+                " and mail_info.mail_id=message.mail_id;";
+        
+        logger.debug(sql);
+        
+        try {
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                if (num == rs.getRow())
+                    return rs.getString("content");
+            }
+        }
+        catch (Exception e) {
+            logger.error(e);
+        }
+        return "";
+    }
+    
+    
+    /**
+     * To get all mail ids
+     * @param role
+     * @return
+     */
+    public ArrayList<Integer> getMailIDs(MailRole role) {
+        ArrayList<Integer> ids = new ArrayList<Integer>();
+        String sql = "SELECT mail_id FROM mail_info WHERE role=" + 
+                role.ordinal() + ";";
+        
+        logger.debug(sql);
+        
+        try {
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                ids.add(rs.getInt("mail_id"));
+            }
+        }
+        catch (Exception e) {
+            logger.error(e);
+        }
+        return ids;
+    }
+    
+    /**
+     * To delete the mail with the id
+     * @param id
+     * @return
+     */
+    public boolean deleteMail(int id) {
+        String sql = "DELETE * FROM mail_info WHERE mail_id=" + id + ";";
+        
+        logger.debug(sql);
+        
+        try {
+            this.stmt.executeUpdate(sql);
+            return true;
+        }
+        catch (SQLException e) {
+            logger.error(e);
+            return false;
         }
     }
 }

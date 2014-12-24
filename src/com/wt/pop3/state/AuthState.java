@@ -45,6 +45,7 @@ public class AuthState extends State {
                 service.closeConnection();
                 return ;
             }
+            service.writeToClient("+OK Authentication succeeded");
             service.getReceiver().setState(new ApplyState(this.user));
             this.cur = "quit";
         }
