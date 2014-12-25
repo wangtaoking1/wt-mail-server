@@ -1,5 +1,6 @@
 package com.wt.pop3.state;
 
+import com.wt.pop3.PopServer;
 import com.wt.pop3.PopServiceThread;
 import com.wt.utils.Manager;
 import com.wt.utils.User;
@@ -47,10 +48,14 @@ public class AuthState extends State {
             this.user.setPassword(args[1]);
             if (!Manager.authUser(user)) {
                 service.writeToClient("-ERR INCORRECT PASSWORD");
+                PopServer.logger.info("User " + user.getUsername() + 
+                        " login failed");
                 service.closeConnection();
                 return ;
             }
             service.writeToClient("+OK Authentication succeeded");
+            PopServer.logger.info("User " + user.getUsername() + 
+                    " login successfully");
             service.getReceiver().setState(new ApplyState(this.user));
             this.cur = "quit";
         }

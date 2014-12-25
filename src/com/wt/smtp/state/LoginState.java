@@ -1,6 +1,8 @@
 package com.wt.smtp.state;
 
 import org.apache.commons.codec.binary.Base64;
+
+import com.wt.pop3.PopServer;
 import com.wt.smtp.SMTPServer;
 import com.wt.smtp.SMTPServiceThread;
 import com.wt.utils.User;
@@ -44,11 +46,14 @@ public class LoginState extends State {
             if (Manager.authUser(this.user)) {
                 service.getReceiver().getMessage().setUser(this.user);
                 service.writeToClient("235 OK, go ahead");
+                SMTPServer.logger.info("User " + user.getUsername() + 
+                        " login successfully");
                 service.getReceiver().setState(new MailState());
             }
             else {
                 service.writeToClient("535 authentication failed");
-                
+                SMTPServer.logger.info("User " + user.getUsername() + 
+                        " login failed");
                 service.closeConnection();
             }
         }

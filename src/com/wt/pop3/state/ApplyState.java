@@ -124,7 +124,7 @@ public class ApplyState extends State {
         
         int num = Integer.parseInt(args[1]);
         
-        service.writeToClient(Manager.getMailMessage(MailRole.RECEIVER, num));
+        service.writeToClient(Manager.getMailMessage(MailRole.RECEIVER, num) + "\n.");
     }
     
     
@@ -174,9 +174,13 @@ public class ApplyState extends State {
             return ;
         }
         
+//        PopServer.logger.debug(args[0] + " " + args[1] + " " + args[2]);
+        
         //Get mail id
         int id = Manager.getMailID(MailRole.RECEIVER, Integer.parseInt(
                 args[1]));
+        
+//        PopServer.logger.debug(id);
         
         //Get header and top num lines content
         String content = Manager.getTopContend(id, num);

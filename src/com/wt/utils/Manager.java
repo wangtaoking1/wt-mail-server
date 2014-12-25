@@ -223,7 +223,7 @@ public class Manager {
     public static int getMailID(MailRole role, int cnt) {
         MysqlDriver driver = new MysqlDriver();
         ArrayList<Integer> ids = driver.getMailIDs(role);
-        return ids.get(cnt);
+        return ids.get(cnt - 1);
     }
     
     
@@ -251,10 +251,11 @@ public class Manager {
         StringBuffer retBuf = new StringBuffer();
         retBuf.append(items[0] + "\n\n");
         
-        String[] lines = items[1].split("\n");
-        for (int i = 1; i <= num && i <=lines.length; i++)
-            retBuf.append(lines[i - 1] + "\n");
-        
+        if (items.length == 2) {
+            String[] lines = items[1].split("\n");
+            for (int i = 1; i <= num && i <=lines.length; i++)
+                retBuf.append(lines[i - 1] + "\n");
+        }
         return retBuf.toString();
     }
 }

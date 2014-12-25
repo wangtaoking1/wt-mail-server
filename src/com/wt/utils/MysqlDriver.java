@@ -307,12 +307,14 @@ public class MysqlDriver {
             
             try {
                 ResultSet rs = stmt.executeQuery(sql);
-                if (rs.next()) {
-                    int cnt = rs.getInt(n);
-                    return cnt;
+                while (rs.next()) {
+                    if (rs.getRow() == n)
+                    {
+                        int cnt = rs.getInt("bytes");
+                        return cnt;
+                    }
                 }
-                else
-                    return 0;
+                return 0;
             }
             catch (Exception e) {
                 logger.error(e);
