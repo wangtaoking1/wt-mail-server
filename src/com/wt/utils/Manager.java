@@ -18,7 +18,7 @@ public class Manager {
      * @param message mail
      */
     public static void handleMail(MailMessage message) {
-        SMTPServer.logger.debug("A mail from " + message.getFrom() + " to " +
+        SMTPServer.logger.info("A mail from " + message.getFrom() + " to " +
                     message.getTo());
         
         //Store the message into databases
