@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 
 import com.wt.utils.LoggerFactory;
 import com.wt.utils.Manager;
+import com.wt.utils.User;
 
 /**
  * This is a user manage server
@@ -46,6 +47,7 @@ public class ManageServer implements Runnable {
                 logger.info("A connection from " + client.getInetAddress()
                             .getHostAddress());
                 
+                client.setSoTimeout(3 * 1000);
                 input = new BufferedReader(new InputStreamReader(
                             client.getInputStream()));
                 output = new PrintWriter(client.getOutputStream());
@@ -69,16 +71,27 @@ public class ManageServer implements Runnable {
      * @return
      */
     public String applyForRequest(String inStr) {
+        logger.debug(inStr);
+        
         String[] args = inStr.split(" ");
         String command = args[0].toLowerCase();
         if (command.equals("reg") && args.length == 3) {
             boolean flag = Manager.register(args[1], args[2]);
-            return flag ? "200 ok" : "501 user exists";
+            return flag ? "+OK" : "-ERR";
         }
         if (command.equals("unreg") && args.length == 3) {
             boolean flag = Manager.unRegister(args[1], args[2]);
-            return flag ? "200 ok" : "501 delete failed";
+            return flag ? "+OK" : "-ERR";
         }
-        return "404 unknown command";
+        if (command.equalsIgnoreCase("has") && args.length == 2) {
+            boolean flag = Manager.isLocalUser(args[1]);
+            return flag ? "True" : "False";
+        }
+        if (command.equalsIgnoreCase("auth") && args.length == 3) {
+            User user = new User(args[1], args[2]);
+            boolean flag = Manager.authUser(user);
+            return flag ? "True" : "False";
+        }
+        return "-ERR command not found";
     }
 }
