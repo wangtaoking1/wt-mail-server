@@ -54,7 +54,7 @@ public class AuthState extends State {
                 return ;
             }
             service.writeToClient("+OK Authentication succeeded");
-            PopServer.logger.info("User " + user.getUsername() + 
+            PopServer.logger.debug("User " + user.getUsername() + 
                     " login successfully");
             service.getReceiver().setState(new ApplyState(this.user));
             this.cur = "quit";

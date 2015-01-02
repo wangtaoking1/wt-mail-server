@@ -37,7 +37,7 @@ public class PopServer implements Runnable {
             
             while (true) {
                 Socket client = server.accept();
-                logger.info("A connection from " + client.getInetAddress()
+                logger.debug("A connection from " + client.getInetAddress()
                             .getHostAddress());
 
                 //Create a new thread if there is no idle thread;

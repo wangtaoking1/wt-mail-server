@@ -42,7 +42,7 @@ public class PopServiceThread implements Runnable {
             PopServer.logger.error(e);
         }
         
-        PopServer.logger.info("Connection with the client " + 
+        PopServer.logger.debug("Connection with the client " + 
                 client.getInetAddress().getHostAddress() + " created");
         
         //Send hello info to the client
@@ -90,7 +90,7 @@ public class PopServiceThread implements Runnable {
         if (client != null) {
             try {
                 client.close();
-                PopServer.logger.info("Connection with the client " + 
+                PopServer.logger.debug("Connection with the client " + 
                     client.getInetAddress().getHostAddress() + " closed");
             } catch (Exception oE) {
                 PopServer.logger.error(oE);

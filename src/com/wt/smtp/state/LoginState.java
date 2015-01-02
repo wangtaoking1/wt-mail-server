@@ -46,7 +46,7 @@ public class LoginState extends State {
             if (Manager.authUser(this.user)) {
                 service.getReceiver().getMessage().setUser(this.user);
                 service.writeToClient("235 OK, go ahead");
-                SMTPServer.logger.info("User " + user.getUsername() + 
+                SMTPServer.logger.debug("User " + user.getUsername() + 
                         " login successfully");
                 service.getReceiver().setState(new MailState());
             }

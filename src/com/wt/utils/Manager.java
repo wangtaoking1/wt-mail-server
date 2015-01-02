@@ -148,9 +148,9 @@ public class Manager {
      * To get the current mail status
      * @return
      */
-    public static String getMailStatus(Manager.MailRole role) {
+    public static String getMailStatus(String username, Manager.MailRole role) {
         MysqlDriver driver = new MysqlDriver();
-        return driver.getStatus(role);
+        return driver.getStatus(username, role);
     }
     
     /**
@@ -158,9 +158,9 @@ public class Manager {
      * @param role
      * @return
      */
-    public static int getMailCount(MailRole role) {
+    public static int getMailCount(String username, MailRole role) {
         MysqlDriver driver = new MysqlDriver();
-        return driver.getMailCount(role);
+        return driver.getMailCount(username, role);
     }
     
     /**
@@ -168,18 +168,18 @@ public class Manager {
      * @param n
      * @return
      */
-    public static int getBytes(int n) {
+    public static int getBytes(String username, int n) {
         MysqlDriver driver = new MysqlDriver();
-        return driver.getMailBytes(n);
+        return driver.getMailBytes(username, n);
     }
     
     /**
      * To get the list of mails
      * @return
      */
-    public static String getMailStatusList() {
+    public static String getMailStatusList(String username) {
         MysqlDriver driver = new MysqlDriver();
-        return driver.getMailStatusList();
+        return driver.getMailStatusList(username);
     }
     
     /**
@@ -188,9 +188,9 @@ public class Manager {
      * @param num
      * @return
      */
-    public static String getMailMessage(MailRole role, int num) {
+    public static String getMailMessage(String username, MailRole role, int num) {
         MysqlDriver driver = new MysqlDriver();
-        int id = Manager.getMailID(role, num);
+        int id = Manager.getMailID(username, role, num);
         driver.readMail(id);
         return driver.getMailMessage(id);
     }
@@ -200,10 +200,10 @@ public class Manager {
      * @param que
      * @return
      */
-    public static ArrayList<Integer> getMailIDs(MailRole role, 
+    public static ArrayList<Integer> getMailIDs(String username, MailRole role, 
             ArrayList<Integer> que) {
         MysqlDriver driver = new MysqlDriver();
-        ArrayList<Integer> ids = driver.getMailIDs(role);
+        ArrayList<Integer> ids = driver.getMailIDs(username, role);
         ArrayList<Integer> mail_ids = new ArrayList<Integer>();
         for (int i = 1; i <= ids.size(); i++) {
             if (que.contains(i)) {
@@ -220,9 +220,9 @@ public class Manager {
      * @param cnt
      * @return
      */
-    public static int getMailID(MailRole role, int cnt) {
+    public static int getMailID(String username, MailRole role, int cnt) {
         MysqlDriver driver = new MysqlDriver();
-        ArrayList<Integer> ids = driver.getMailIDs(role);
+        ArrayList<Integer> ids = driver.getMailIDs(username, role);
         return ids.get(cnt - 1);
     }
     

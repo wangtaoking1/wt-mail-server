@@ -29,7 +29,7 @@ public class MysqlDriverTest {
 //    @Test
 //    public void testGetMailStatus() {
 //        MysqlDriver driver = new MysqlDriver();
-//        System.out.println(driver.getStatus(Manager.MailRole.RECEIVER));
+//        System.out.println(driver.getStatus("test1", Manager.MailRole.SENDER));
 //    }
 //    
 //    @Test

@@ -53,8 +53,8 @@ public class ApplyState extends State {
     @Override
     public void synWithDB() {
         // TODO: syn operation with db
-        ArrayList<Integer> del_ids = Manager.getMailIDs(MailRole.RECEIVER, 
-                delQue);
+        ArrayList<Integer> del_ids = Manager.getMailIDs(user.getUsername(), 
+                MailRole.RECEIVER, delQue);
         for (int id : del_ids) {
             Manager.delMail(id);
         }
@@ -72,7 +72,8 @@ public class ApplyState extends State {
             return ;
         }
         
-        String ret = Manager.getMailStatus(Manager.MailRole.RECEIVER);
+        String ret = Manager.getMailStatus(this.user.getUsername(), 
+                Manager.MailRole.RECEIVER);
         service.writeToClient("+OK " + ret);
         return ;
     }
@@ -89,19 +90,21 @@ public class ApplyState extends State {
             return ;
         }
         if (args.length == 2) {
-            if (!this.checkMailNum(MailRole.RECEIVER, args[1])) {
+            if (!this.checkMailNum(user.getUsername(), MailRole.RECEIVER, 
+                    args[1])) {
                 service.writeToClient("-ERR error arguments");
                 return ;
             }
             
             int num = Integer.parseInt(args[1]);
-            int bytes = Manager.getBytes(num);
+            int bytes = Manager.getBytes(user.getUsername(), num);
             service.writeToClient("+OK " + num + " " + bytes);
         }
         else {
             service.writeToClient("+OK " + Manager.getMailStatus(
-                    Manager.MailRole.RECEIVER));
-            service.writeToClient(Manager.getMailStatusList() + ".");
+                    user.getUsername(), Manager.MailRole.RECEIVER));
+            service.writeToClient(Manager.getMailStatusList(user.getUsername()) 
+                    + ".");
         }
     }
     
@@ -117,14 +120,16 @@ public class ApplyState extends State {
             return ;
         }
         
-        if (!this.checkMailNum(MailRole.RECEIVER, args[1])) {
+        if (!this.checkMailNum(user.getUsername(), MailRole.RECEIVER, 
+                args[1])) {
             service.writeToClient("-ERR error arguments");
             return ;
         }
         
         int num = Integer.parseInt(args[1]);
         
-        service.writeToClient(Manager.getMailMessage(MailRole.RECEIVER, num) + "\n.");
+        service.writeToClient(Manager.getMailMessage(user.getUsername(), 
+                MailRole.RECEIVER, num) + "\n.");
     }
     
     
@@ -139,7 +144,8 @@ public class ApplyState extends State {
             return ;
         }
         
-        if (!this.checkMailNum(MailRole.RECEIVER, args[1])) {
+        if (!this.checkMailNum(user.getUsername(), MailRole.RECEIVER, 
+                args[1])) {
             service.writeToClient("-ERR error arguments");
             return ;
         }
@@ -160,7 +166,8 @@ public class ApplyState extends State {
             return ;
         }
         
-        if (!this.checkMailNum(MailRole.RECEIVER, args[1])) {
+        if (!this.checkMailNum(user.getUsername(), MailRole.RECEIVER, 
+                args[1])) {
             service.writeToClient("-ERR error arguments");
             return ;
         }
@@ -177,7 +184,7 @@ public class ApplyState extends State {
 //        PopServer.logger.debug(args[0] + " " + args[1] + " " + args[2]);
         
         //Get mail id
-        int id = Manager.getMailID(MailRole.RECEIVER, Integer.parseInt(
+        int id = Manager.getMailID(user.getUsername(), MailRole.RECEIVER, Integer.parseInt(
                 args[1]));
         
 //        PopServer.logger.debug(id);
@@ -194,7 +201,7 @@ public class ApplyState extends State {
      * @param sNum
      * @return
      */
-    private boolean checkMailNum(MailRole role, String sNum) {
+    private boolean checkMailNum(String username, MailRole role, String sNum) {
         int num = 0;
         try {
             num = Integer.parseInt(sNum);
@@ -203,7 +210,7 @@ public class ApplyState extends State {
             return false;
         }
         
-        int cnt = Manager.getMailCount(role);
+        int cnt = Manager.getMailCount(username, role);
         if (num == 0 || num > cnt) {
             return false;
         }

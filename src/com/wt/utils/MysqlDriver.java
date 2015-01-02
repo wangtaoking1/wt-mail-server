@@ -219,9 +219,10 @@ public class MysqlDriver {
      * @param role
      * @return
      */
-    public String getStatus(Manager.MailRole role) {
+    public String getStatus(String username, Manager.MailRole role) {
         String sql = "SELECT Count(*), Sum(bytes) FROM mail_info " + 
-                "WHERE role=" + role.ordinal() + ";";
+                "WHERE role=" + role.ordinal() + " and username='" + 
+                username + "';";
         
         logger.debug(sql);
         
@@ -251,9 +252,10 @@ public class MysqlDriver {
      * @param role
      * @return
      */
-    public int getMailCount(Manager.MailRole role) {
+    public int getMailCount(String username, Manager.MailRole role) {
         String sql = "SELECT Count(*) FROM mail_info " + 
-                "WHERE role=" + role.ordinal() + ";";
+                "WHERE role=" + role.ordinal() + " and username='" + 
+                username + "';";
         
         logger.debug(sql);
         
@@ -278,10 +280,10 @@ public class MysqlDriver {
      * @param n "mail number"
      * @return
      */
-    public int getMailBytes(int n) {
+    public int getMailBytes(String username, int n) {
         if (n == 0) {
             String sql = "SELECT Sum(bytes) FROM mail_info " + 
-                    "WHERE role=1;";
+                    "WHERE role=1 and username='" +username + "';";
             
             logger.debug(sql);
             
@@ -301,7 +303,7 @@ public class MysqlDriver {
         }
         else {
             String sql = "SELECT bytes FROM mail_info " + 
-                    "WHERE role=1;";
+                    "WHERE role=1 and username='" +username + "';";
             
             logger.debug(sql);
             
@@ -327,9 +329,9 @@ public class MysqlDriver {
      * To the list of mails status
      * @return
      */
-    public String getMailStatusList() {
+    public String getMailStatusList(String username) {
         String sql = "SELECT bytes FROM mail_info " + 
-                "WHERE role=1;";
+                "WHERE role=1 and username='" + username +"';";
         
         logger.debug(sql);
         
@@ -397,10 +399,10 @@ public class MysqlDriver {
      * @param role
      * @return
      */
-    public ArrayList<Integer> getMailIDs(MailRole role) {
+    public ArrayList<Integer> getMailIDs(String username, MailRole role) {
         ArrayList<Integer> ids = new ArrayList<Integer>();
         String sql = "SELECT mail_id FROM mail_info WHERE role=" + 
-                role.ordinal() + ";";
+                role.ordinal() + " and username='" + username + "';";
         
         logger.debug(sql);
         

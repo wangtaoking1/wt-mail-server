@@ -48,7 +48,7 @@ public class SMTPServiceThread implements Runnable {
             SMTPServer.logger.error(e);
         }
         
-        SMTPServer.logger.info("Connection with the client " + 
+        SMTPServer.logger.debug("Connection with the client " + 
                 client.getInetAddress().getHostAddress() + " created");
         
         //Send hello info to the client
@@ -97,7 +97,7 @@ public class SMTPServiceThread implements Runnable {
             try {
                 this.writeToClient("221 Bye");
                 client.close();
-                SMTPServer.logger.info("Connection with the client " + 
+                SMTPServer.logger.debug("Connection with the client " + 
                     client.getInetAddress().getHostAddress() + " closed");
             } catch (Exception oE) {
                 SMTPServer.logger.error(oE);
