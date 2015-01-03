@@ -300,10 +300,10 @@ public class MysqlDriver {
      * @param n "mail number"
      * @return
      */
-    public int getMailBytes(String username, int n) {
+    public int getMailBytes(String username, Manager.MailRole role, int n) {
         if (n == 0) {
-            String sql = "SELECT Sum(bytes) FROM mail_info " + 
-                    "WHERE role=1 and username='" +username + "';";
+            String sql = "SELECT Sum(bytes) FROM mail_info " + "WHERE role=" 
+                    + role.ordinal() + " and username='" + username + "';";
             
             logger.debug(sql);
             
@@ -349,9 +349,9 @@ public class MysqlDriver {
      * To the list of mails status
      * @return
      */
-    public String getMailStatusList(String username) {
-        String sql = "SELECT bytes FROM mail_info " + 
-                "WHERE role=1 and username='" + username +"';";
+    public String getMailStatusList(String username, MailRole role) {
+        String sql = "SELECT bytes FROM mail_info " + "WHERE role=" + 
+                role.ordinal() + " and username='" + username +"';";
         
         logger.debug(sql);
         
@@ -444,7 +444,7 @@ public class MysqlDriver {
      * @return
      */
     public boolean deleteMail(int id) {
-        String sql = "DELETE * FROM mail_info WHERE mail_id=" + id + ";";
+        String sql = "DELETE FROM mail_info WHERE mail_id=" + id + ";";
         
         logger.debug(sql);
         

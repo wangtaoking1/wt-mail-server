@@ -183,9 +183,9 @@ public class Manager {
      * @param n
      * @return
      */
-    public static int getBytes(String username, int n) {
+    public static int getBytes(String username, MailRole role, int n) {
         MysqlDriver driver = new MysqlDriver();
-        int bytes = driver.getMailBytes(username, n);
+        int bytes = driver.getMailBytes(username, role, n);
         driver.closeConnection();
         return bytes;
     }
@@ -194,9 +194,9 @@ public class Manager {
      * To get the list of mails
      * @return
      */
-    public static String getMailStatusList(String username) {
+    public static String getMailStatusList(String username, MailRole role) {
         MysqlDriver driver = new MysqlDriver();
-        String ret = driver.getMailStatusList(username);
+        String ret = driver.getMailStatusList(username, role);
         driver.closeConnection();
         return ret;
     }

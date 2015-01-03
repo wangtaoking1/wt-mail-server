@@ -9,8 +9,9 @@ import com.wt.utils.User;
  * @time 2014/12/23
  */
 public class PopReceiver {
-    private String[] commands = {"user", "pass", "stat", "list", "retr", 
-                            "dele", "top", "noop", "quit"};
+    private String[] commands = {"user", "pass", "stat", "sstat", "list", 
+            "slist", "retr", "sretr", "dele", "sdele", "top", "stop", "noop",
+            "quit"};
     private State state = null;
     
     public PopReceiver(State state) {
