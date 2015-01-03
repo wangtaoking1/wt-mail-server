@@ -44,7 +44,7 @@ public class ManageServer implements Runnable {
             
             while (true) {
                 Socket client = server.accept();
-                logger.info("A connection from " + client.getInetAddress()
+                logger.debug("A connection from " + client.getInetAddress()
                             .getHostAddress());
                 
                 client.setSoTimeout(3 * 1000);
@@ -77,10 +77,16 @@ public class ManageServer implements Runnable {
         String command = args[0].toLowerCase();
         if (command.equals("reg") && args.length == 3) {
             boolean flag = Manager.register(args[1], args[2]);
+            if (flag) {
+                logger.info("user " + args[1] + " register successed");
+            }
             return flag ? "+OK" : "-ERR";
         }
         if (command.equals("unreg") && args.length == 3) {
             boolean flag = Manager.unRegister(args[1], args[2]);
+            if (flag) {
+                logger.info("user " + args[1] + "unregister successed");
+            }
             return flag ? "+OK" : "-ERR";
         }
         if (command.equalsIgnoreCase("has") && args.length == 2) {
@@ -90,7 +96,14 @@ public class ManageServer implements Runnable {
         if (command.equalsIgnoreCase("auth") && args.length == 3) {
             User user = new User(args[1], args[2]);
             boolean flag = Manager.authUser(user);
-            return flag ? "True" : "False";
+            if (!flag) {
+                logger.info("user " + user.getUsername() + " auth failed");
+                return "False";
+            }
+            else {
+                logger.info("user " + user.getUsername() + " auth successed");
+                return "True";
+            }
         }
         return "-ERR command not found";
     }

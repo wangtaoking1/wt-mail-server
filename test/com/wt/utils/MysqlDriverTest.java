@@ -11,6 +11,7 @@ public class MysqlDriverTest {
 //    public void testRegisterUser() {
 //        MysqlDriver driver = new MysqlDriver();
 //        driver.registerUser("test0", "test0");
+//        driver.closeConnection();
 //    }
     
 //    @Test
@@ -24,18 +25,21 @@ public class MysqlDriverTest {
 //        MysqlDriver driver = new MysqlDriver();
 //        boolean flag = driver.storeMail(message, "test0", Manager.MailRole.SENDER);
 //        Assert.assertTrue(flag);
+//        driver.closeConnection();
 //    }
     
 //    @Test
 //    public void testGetMailStatus() {
 //        MysqlDriver driver = new MysqlDriver();
 //        System.out.println(driver.getStatus("test1", Manager.MailRole.SENDER));
+//        driver.closeConnection();
 //    }
 //    
 //    @Test
 //    public void testGetMessageContent() {
 //        MysqlDriver driver = new MysqlDriver();
 //        System.out.println(driver.getMessageContent(4));
+//        driver.closeConnection();
 //    }
     
     @Test 

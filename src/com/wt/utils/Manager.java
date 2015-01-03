@@ -45,6 +45,8 @@ public class Manager {
                 //TODO: Add the mail to Sending_Queue
             }
         }
+        
+        driver.closeConnection();
     }
 
     /**
@@ -105,7 +107,10 @@ public class Manager {
      */
     public static boolean authUser(User user) {
         MysqlDriver driver = new MysqlDriver();
-        return driver.authUser(user.getUsername(), user.getPassword());
+        boolean flag = driver.authUser(user.getUsername(), 
+                user.getPassword());
+        driver.closeConnection();
+        return flag;
     }
     
     
@@ -116,7 +121,9 @@ public class Manager {
      */
     public static boolean isLocalUser(String username) {
         MysqlDriver driver = new MysqlDriver();
-        return driver.hasUser(username);
+        boolean flag = driver.hasUser(username);
+        driver.closeConnection();
+        return flag;
     }
 
     /**
@@ -127,7 +134,9 @@ public class Manager {
      */
     public static boolean register(String username, String password) {
         MysqlDriver driver = new MysqlDriver();
-        return driver.registerUser(username, password);
+        boolean flag = driver.registerUser(username, password);
+        driver.closeConnection();
+        return flag;
     }
     
     /**
@@ -138,10 +147,12 @@ public class Manager {
      */
     public static boolean unRegister(String username, String password) {
         MysqlDriver driver = new MysqlDriver();
+        boolean flag = false;
         if (driver.authUser(username, password)) {
-            return driver.deleteUser(username);
+            flag = driver.deleteUser(username);
         }
-        return false;
+        driver.closeConnection();
+        return flag;
     }
     
     /**
@@ -150,7 +161,9 @@ public class Manager {
      */
     public static String getMailStatus(String username, Manager.MailRole role) {
         MysqlDriver driver = new MysqlDriver();
-        return driver.getStatus(username, role);
+        String ret = driver.getStatus(username, role);
+        driver.closeConnection();
+        return ret;
     }
     
     /**
@@ -160,7 +173,9 @@ public class Manager {
      */
     public static int getMailCount(String username, MailRole role) {
         MysqlDriver driver = new MysqlDriver();
-        return driver.getMailCount(username, role);
+        int cnt = driver.getMailCount(username, role);
+        driver.closeConnection();
+        return cnt;
     }
     
     /**
@@ -170,7 +185,9 @@ public class Manager {
      */
     public static int getBytes(String username, int n) {
         MysqlDriver driver = new MysqlDriver();
-        return driver.getMailBytes(username, n);
+        int bytes = driver.getMailBytes(username, n);
+        driver.closeConnection();
+        return bytes;
     }
     
     /**
@@ -179,7 +196,9 @@ public class Manager {
      */
     public static String getMailStatusList(String username) {
         MysqlDriver driver = new MysqlDriver();
-        return driver.getMailStatusList(username);
+        String ret = driver.getMailStatusList(username);
+        driver.closeConnection();
+        return ret;
     }
     
     /**
@@ -192,7 +211,9 @@ public class Manager {
         MysqlDriver driver = new MysqlDriver();
         int id = Manager.getMailID(username, role, num);
         driver.readMail(id);
-        return driver.getMailMessage(id);
+        String ret = driver.getMailMessage(id);
+        driver.closeConnection();
+        return ret;
     }
     
     /**
@@ -210,6 +231,7 @@ public class Manager {
                 mail_ids.add(ids.get(i - 1));
             }
         }
+        driver.closeConnection();
         return mail_ids;
     }
     
@@ -223,7 +245,9 @@ public class Manager {
     public static int getMailID(String username, MailRole role, int cnt) {
         MysqlDriver driver = new MysqlDriver();
         ArrayList<Integer> ids = driver.getMailIDs(username, role);
-        return ids.get(cnt - 1);
+        int id = ids.get(cnt - 1);
+        driver.closeConnection();
+        return id;
     }
     
     
@@ -234,6 +258,7 @@ public class Manager {
     public static void delMail(int id) {
         MysqlDriver driver = new MysqlDriver();
         driver.deleteMail(id);
+        driver.closeConnection();
     }
     
     
@@ -256,6 +281,8 @@ public class Manager {
             for (int i = 1; i <= num && i <=lines.length; i++)
                 retBuf.append(lines[i - 1] + "\n");
         }
+        
+        driver.closeConnection();
         return retBuf.toString();
     }
 }

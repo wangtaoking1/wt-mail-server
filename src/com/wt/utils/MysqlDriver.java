@@ -23,6 +23,7 @@ public class MysqlDriver {
     private String mysql_user = "root";
     private String mysql_pw = "admin123";
     
+    private Connection con;
     private Statement stmt;
     
 
@@ -30,7 +31,7 @@ public class MysqlDriver {
         this.readConfigs();
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            Connection con = DriverManager.getConnection(
+            con = DriverManager.getConnection(
                                  "jdbc:mysql://127.0.0.1:3306/wt_mail", "root",
                                  "admin123");
             stmt = con.createStatement();
@@ -40,6 +41,25 @@ public class MysqlDriver {
         }
     }
 
+    
+    /**
+     * To close database connection
+     */
+    public void closeConnection() {
+        try {
+            if (stmt != null) {
+                stmt.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        catch (Exception e) {
+            logger.error(e);
+        }
+    }
+    
+    
     /**
      * To read the mysql configuration options
      */
