@@ -16,6 +16,7 @@ public class ConfigParserTest {
                 System.out.println(key + "=" + parser.getOption((String)key));
             }
         }
+        parser.closeFile();
     }
 
 }

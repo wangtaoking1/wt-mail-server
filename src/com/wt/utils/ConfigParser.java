@@ -14,11 +14,13 @@ import org.apache.log4j.Logger;
  */
 public class ConfigParser {
     private Properties prop = null;
+    private FileInputStream inputStream = null;
 
     public ConfigParser(String path) {
         prop = new Properties();
         try {
-            prop.load(new FileInputStream(path));
+            inputStream = new FileInputStream(path);
+            prop.load(inputStream);
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -30,6 +32,18 @@ public class ConfigParser {
 
     public Set<Object> getKeys() {
         return this.prop.keySet();
+    }
+    
+    public void closeFile() {
+        if (this.inputStream != null) {
+            try {
+                this.inputStream.close();
+                this.inputStream = null;
+            }
+            catch (Exception e) {
+                System.out.println(e);
+            }
+        }
     }
 
 }

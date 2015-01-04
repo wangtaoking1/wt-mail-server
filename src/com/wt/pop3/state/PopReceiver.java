@@ -11,7 +11,7 @@ import com.wt.utils.User;
 public class PopReceiver {
     private String[] commands = {"user", "pass", "stat", "sstat", "list", 
             "slist", "retr", "sretr", "dele", "sdele", "top", "stop", "noop",
-            "isr", "quit"};
+            "isr", "read", "quit"};
     private State state = null;
     
     public PopReceiver(State state) {

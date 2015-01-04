@@ -59,8 +59,11 @@ public class Manager {
         ConfigParser parser = new ConfigParser("wt_mail.properties");
         
         if (parser.getOption("server_ip").equals(server) || parser.getOption(
-                "server_name").equals(server))
+                "server_name").equals(server)) {
+            parser.closeFile();
             return true;
+        }
+        parser.closeFile();
         return false;
     }
 
@@ -74,8 +77,11 @@ public class Manager {
         ConfigParser parser = new ConfigParser("wt_mail.properties");
         
         if (parser.getOption("my_server_ips").indexOf(server) != -1 || 
-                parser.getOption("my_server_names").indexOf(server) != -1)
+                parser.getOption("my_server_names").indexOf(server) != -1) {
+            parser.closeFile();
             return true;
+        }
+        parser.closeFile();
         return false;
     }
     

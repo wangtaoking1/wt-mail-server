@@ -74,6 +74,8 @@ public class MysqlDriver {
         if (!parser.getOption("mysql_pw").equals("")) {
             mysql_pw = parser.getOption("mysql_pw");
         }
+        
+        parser.closeFile();
     }
     
     

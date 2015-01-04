@@ -63,6 +63,9 @@ public class ApplyState extends State {
         case "isr":
             this.applyISR(service, args);
             break;
+        case "read":
+            this.applyREAD(service, args);
+            break;
         default:
             service.writeToClient("-ERR Unknown command");
             break;
@@ -383,6 +386,32 @@ public class ApplyState extends State {
             service.writeToClient("1");
         else
             service.writeToClient("0");
+    }
+    
+    
+    /**
+     * To apply for "read" command
+     * @param service
+     * @param args
+     */
+    private void applyREAD(PopServiceThread service, String[] args) {
+        if (args.length != 2) {
+            service.writeToClient("-ERR Syntax error");
+            return ;
+        }
+        
+        if (!this.checkMailNum(user.getUsername(), MailRole.RECEIVER, 
+                args[1])) {
+            service.writeToClient("-ERR error arguments");
+            return ;
+        }
+        
+        int num = Integer.parseInt(args[1]);
+        
+        if (Manager.readMail(user.getUsername(), MailRole.RECEIVER, num))
+            service.writeToClient("+OK");
+        else
+            service.writeToClient("-ERR");
     }
     
     

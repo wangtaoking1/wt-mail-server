@@ -29,6 +29,8 @@ public class LoggerFactory {
         if (!parser.getOption("logs_path").equals(""))
             logPath = parser.getOption("logs_path");
 
+        parser.closeFile();
+        
         //output to file
         FileAppender appender1 = null;
         //output to console
