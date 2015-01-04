@@ -60,6 +60,9 @@ public class ApplyState extends State {
         case "stop":
             this.applySTOP(service, args);
             break;
+        case "isr":
+            this.applyISR(service, args);
+            break;
         default:
             service.writeToClient("-ERR Unknown command");
             break;
@@ -354,6 +357,32 @@ public class ApplyState extends State {
         //Get header and top num lines content
         String content = Manager.getTopContend(id, num);
         service.writeToClient(content + ".");
+    }
+    
+    
+    /**
+     * To apply for "isr" command
+     * @param service
+     * @param args
+     */
+    private void applyISR(PopServiceThread service, String[] args) {
+        if (args.length != 2) {
+            service.writeToClient("-ERR Syntax error");
+            return ;
+        }
+        
+        if (!this.checkMailNum(user.getUsername(), MailRole.RECEIVER, 
+                args[1])) {
+            service.writeToClient("-ERR error arguments");
+            return ;
+        }
+        
+        int num = Integer.parseInt(args[1]);
+        
+        if (Manager.getReadStatus(user.getUsername(), MailRole.RECEIVER, num))
+            service.writeToClient("1");
+        else
+            service.writeToClient("0");
     }
     
     

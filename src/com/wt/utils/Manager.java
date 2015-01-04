@@ -33,7 +33,8 @@ public class Manager {
         String toServer = Manager.getMailServer(message.getTo());
         if (Manager.isLocalServer(toServer)) {
             String user = Manager.getMailUser(message.getTo());
-            driver.storeMail(message, user, MailRole.RECEIVER);
+            if (Manager.isLocalUser(user))
+                driver.storeMail(message, user, MailRole.RECEIVER);
         }
         else {
             //Send the mail to the true server
@@ -210,11 +211,27 @@ public class Manager {
     public static String getMailMessage(String username, MailRole role, int num) {
         MysqlDriver driver = new MysqlDriver();
         int id = Manager.getMailID(username, role, num);
-        driver.readMail(id);
         String ret = driver.getMailMessage(id);
         driver.closeConnection();
         return ret;
     }
+    
+    
+    /**
+     * To read the mail
+     * @param username
+     * @param role
+     * @param num
+     * @return
+     */
+    public static boolean readMail(String username, MailRole role, int num) {
+        MysqlDriver driver = new MysqlDriver();
+        int id = Manager.getMailID(username, role, num);
+        boolean flag = driver.readMail(id);
+        driver.closeConnection();
+        return flag;
+    }
+    
     
     /**
      * To get the mail ids with the que
@@ -284,6 +301,22 @@ public class Manager {
         
         driver.closeConnection();
         return retBuf.toString();
+    }
+    
+    
+    /**
+     * To get the mail read status of user
+     * @param username
+     * @param role
+     * @param index
+     * @return
+     */
+    public static boolean getReadStatus(String username, MailRole role, int index) {
+        MysqlDriver driver = new MysqlDriver();
+        boolean flag = driver.getReadStatus(username, role, index);
+        driver.closeConnection();
+        
+        return flag;
     }
 }
 

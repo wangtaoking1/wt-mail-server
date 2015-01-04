@@ -133,7 +133,12 @@ public class MysqlDriver {
         String sql = "INSERT INTO mail_info VALUES (null, '" + user + "', b'" +
                 role.ordinal() + "', '" + message.getFrom() + "', '" + 
                 message.getTo() + "', '" + message.getHeader() + "', " + 
-                message.getBytes() + ");";
+                message.getBytes();
+        if (role == MailRole.RECEIVER)
+            sql += ", b'0');";
+        else
+            sql += ", b'1');";
+        
         logger.debug(sql);
         
         int mail_id = -1;
@@ -151,7 +156,7 @@ public class MysqlDriver {
         }
         
         sql = "INSERT INTO message VALUES (null, " + mail_id + ", '" 
-                + message.getContent() + "', b'0');";
+                + message.getContent() + "');";
         logger.debug(sql);
         
         try {
@@ -372,26 +377,6 @@ public class MysqlDriver {
     
     
     /**
-     * To read the mail
-     * @param id
-     * @return
-     */
-    public boolean readMail(int id) {
-        String sql = "UPDATE message SET readed=b'1' WHERE mail_id=" + id +";";
-        
-        logger.debug(sql);
-        
-        try {
-            this.stmt.executeUpdate(sql);
-            return true;
-        }
-        catch (SQLException e) {
-            logger.error(e);
-            return false;
-        }
-    }
-    
-    /**
      * To get the mail content with mail_id id
      * @param id
      * @return
@@ -478,6 +463,58 @@ public class MysqlDriver {
             logger.error(e);
             return "";
         }
+    }
+    
+  
+    /**
+     * To read the mail
+     * @param id
+     * @return
+     */
+    public boolean readMail(int id) {
+        String sql = "UPDATE mail_info SET readed=b'1' WHERE mail_id=" 
+                + id +";";
+        
+        logger.debug(sql);
+        
+        try {
+            this.stmt.executeUpdate(sql);
+            return true;
+        }
+        catch (SQLException e) {
+            logger.error(e);
+            return false;
+        }
+    }
+    
+    
+    /**
+     * To get the mail read status of user
+     * @param username
+     * @param role
+     * @param index
+     * @return
+     */
+    public boolean getReadStatus(String username, MailRole role,  int index) {
+        String sql = "SELECT readed FROM mail_info WHERE username='" + 
+                username + "' and role=" + role.ordinal() + ";";
+        
+        logger.debug(sql);
+        
+        boolean flag = false;
+        try {
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                if (rs.getRow() == index) {
+                    int readed = rs.getInt(1);
+                    flag = (readed == 1 ? true : false);
+                }
+            }
+        }
+        catch (Exception e) {
+            logger.error(e);
+        }
+        return flag;
     }
 }
 

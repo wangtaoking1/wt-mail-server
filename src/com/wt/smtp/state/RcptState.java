@@ -33,7 +33,7 @@ public class RcptState extends State {
                 return ;
             }
         }
-
+        
         service.getReceiver().getMessage().setTo(this.getMail(arg));
 
         service.writeToClient("250 Rcpt OK");

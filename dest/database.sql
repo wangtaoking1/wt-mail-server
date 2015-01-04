@@ -6,7 +6,7 @@ USE wt_mail;
 CREATE  TABLE `wt_mail`.`user` (
   `username` VARCHAR(30) NOT NULL ,
   `password` VARCHAR(45) NOT NULL ,
-  PRIMARY KEY (`username`) );
+  PRIMARY KEY (`username`) ) DEFAULT CHARACTER SET = utf8;
 
 
 CREATE  TABLE `wt_mail`.`mail_info` (
@@ -23,7 +23,7 @@ CREATE  TABLE `wt_mail`.`mail_info` (
     FOREIGN KEY (`username` )
     REFERENCES `wt_mail`.`user` (`username` )
     ON DELETE CASCADE
-    ON UPDATE NO ACTION);
+    ON UPDATE NO ACTION) DEFAULT CHARACTER SET = utf8;
 
 
 CREATE  TABLE `wt_mail`.`message` (
@@ -37,6 +37,6 @@ CREATE  TABLE `wt_mail`.`message` (
     FOREIGN KEY (`mail_id` )
     REFERENCES `wt_mail`.`mail_info` (`mail_id` )
     ON DELETE CASCADE
-    ON UPDATE NO ACTION);
+    ON UPDATE NO ACTION) DEFAULT CHARACTER SET = utf8;
 
 

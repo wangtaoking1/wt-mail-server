@@ -17,6 +17,7 @@ CREATE  TABLE `wt_mail`.`mail_info` (
   `to` VARCHAR(45) NOT NULL ,
   `header` TEXT NULL ,
   `bytes` BIGINT NULL ,
+  `readed` BIT NOT NULL DEFAULT b'0',
   PRIMARY KEY (`mail_id`) ,
   INDEX `username` (`username` ASC) ,
   CONSTRAINT `username`
@@ -30,7 +31,6 @@ CREATE  TABLE `wt_mail`.`message` (
   `message_id` INT NOT NULL AUTO_INCREMENT ,
   `mail_id` INT NOT NULL ,
   `content` TEXT NULL ,
-  `readed` BIT NOT NULL DEFAULT b'0',
   PRIMARY KEY (`message_id`) ,
   INDEX `mail_id` (`mail_id` ASC) ,
   CONSTRAINT `mail_id`
