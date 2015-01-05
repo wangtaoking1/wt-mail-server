@@ -10,6 +10,7 @@ import org.apache.log4j.Logger;
 
 import com.wt.utils.LoggerFactory;
 
+
 /**
  * This is a SMTP server
  * @author wangtao
@@ -65,6 +66,7 @@ public class SMTPServer implements Runnable {
         }
     }
 
+    
     /**
      * This function is to stop the server
      */

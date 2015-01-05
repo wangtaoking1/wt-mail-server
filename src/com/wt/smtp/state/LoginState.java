@@ -8,6 +8,11 @@ import com.wt.smtp.SMTPServiceThread;
 import com.wt.utils.User;
 import com.wt.utils.Manager;
 
+/**
+ * This is a command state
+ * @author wangtao
+ * @time 2014/11/13
+ */
 public class LoginState extends State {
     private String[] sta = {"username", "password"};
     private String cur;

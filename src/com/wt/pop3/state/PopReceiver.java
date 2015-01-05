@@ -9,6 +9,7 @@ import com.wt.utils.User;
  * @time 2014/12/23
  */
 public class PopReceiver {
+    //Apply for these command servive
     private String[] commands = {"user", "pass", "stat", "sstat", "list", 
             "slist", "retr", "sretr", "dele", "sdele", "top", "stop", "noop",
             "isr", "read", "quit"};
@@ -21,6 +22,7 @@ public class PopReceiver {
     public void setState(State state) {
         this.state = state;
     }
+    
     
     /**
      * To handle the inStr from the client
@@ -50,6 +52,7 @@ public class PopReceiver {
         
         state.handle(service, args);
     }
+    
     
     /**
      * To check validation of input command

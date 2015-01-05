@@ -6,7 +6,7 @@ USE wt_mail;
 CREATE  TABLE `wt_mail`.`user` (
   `username` VARCHAR(30) NOT NULL ,
   `password` VARCHAR(45) NOT NULL ,
-  PRIMARY KEY (`username`) ) DEFAULT CHARACTER SET = utf8;
+  PRIMARY KEY (`username`) );
 
 
 CREATE  TABLE `wt_mail`.`mail_info` (
@@ -17,26 +17,26 @@ CREATE  TABLE `wt_mail`.`mail_info` (
   `to` VARCHAR(45) NOT NULL ,
   `header` TEXT NULL ,
   `bytes` BIGINT NULL ,
+  `readed` BIT NOT NULL DEFAULT b'0',
   PRIMARY KEY (`mail_id`) ,
   INDEX `username` (`username` ASC) ,
   CONSTRAINT `username`
     FOREIGN KEY (`username` )
     REFERENCES `wt_mail`.`user` (`username` )
     ON DELETE CASCADE
-    ON UPDATE NO ACTION) DEFAULT CHARACTER SET = utf8;
+    ON UPDATE NO ACTION);
 
 
 CREATE  TABLE `wt_mail`.`message` (
   `message_id` INT NOT NULL AUTO_INCREMENT ,
   `mail_id` INT NOT NULL ,
   `content` TEXT NULL ,
-  `readed` BIT NOT NULL DEFAULT b'0',
   PRIMARY KEY (`message_id`) ,
   INDEX `mail_id` (`mail_id` ASC) ,
   CONSTRAINT `mail_id`
     FOREIGN KEY (`mail_id` )
     REFERENCES `wt_mail`.`mail_info` (`mail_id` )
     ON DELETE CASCADE
-    ON UPDATE NO ACTION) DEFAULT CHARACTER SET = utf8;
+    ON UPDATE NO ACTION);
 
 

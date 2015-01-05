@@ -10,6 +10,7 @@ import com.wt.smtp.SMTPServer.ServerType;
 import com.wt.smtp.state.HeloState;
 import com.wt.smtp.state.SmtpReceiver;
 
+
 /**
  * This is a thread class to accept the message from the client
  * @author wangtao
@@ -36,6 +37,7 @@ public class SMTPServiceThread implements Runnable {
     public SmtpReceiver getReceiver() {
         return this.receiver;
     }
+    
     
     @Override
     public void run() {
@@ -79,6 +81,7 @@ public class SMTPServiceThread implements Runnable {
         this.closeConnection();
     }
     
+    
     /**
      * Write string to the client
      * @param outStr
@@ -87,6 +90,7 @@ public class SMTPServiceThread implements Runnable {
         this.output.println(outStr);
         this.output.flush();
     }
+    
     
     /**
      * Close the connection with the client

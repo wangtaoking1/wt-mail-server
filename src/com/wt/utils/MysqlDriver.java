@@ -123,6 +123,7 @@ public class MysqlDriver {
         }
     }
     
+    
     /**
      * To store the message into database
      * @param message
@@ -241,6 +242,7 @@ public class MysqlDriver {
         }
     }
     
+    
     /**
      * To get the current mail status
      * @param role
@@ -273,6 +275,7 @@ public class MysqlDriver {
             return "0 0";
         }
     }
+    
     
     /**
      * To get the count of mails
@@ -352,6 +355,7 @@ public class MysqlDriver {
         }
     }
     
+    
     /**
      * To the list of mails status
      * @return
@@ -425,6 +429,7 @@ public class MysqlDriver {
         return ids;
     }
     
+    
     /**
      * To delete the mail with the id
      * @param id
@@ -444,6 +449,7 @@ public class MysqlDriver {
             return false;
         }
     }
+    
     
     /**
      * To get the content of the message with the mail_id

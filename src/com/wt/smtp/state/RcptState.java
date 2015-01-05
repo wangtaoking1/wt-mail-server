@@ -7,7 +7,11 @@ import com.wt.smtp.SMTPServer.ServerType;
 import com.wt.utils.Manager;
 import com.wt.smtp.SMTPServer;
 
-
+/**
+ * This is a command state
+ * @author wangtao
+ * @time 2014/11/13
+ */
 public class RcptState extends State {
 
     @Override

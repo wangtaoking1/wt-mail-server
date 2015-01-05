@@ -13,7 +13,7 @@ public class MXExchangerTest {
     public void testMxLookup() {
         ArrayList<MXRecord> servers = null;
         try {
-            servers = MXExchanger.mxLookup("163.com");
+            servers = MXExchanger.mxLookup("sohu.com");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -26,11 +26,12 @@ public class MXExchangerTest {
         
     }
     
+    
     @Test
     public void testGetMxServer() {
         String mxServer = null;
         try {
-            mxServer = MXExchanger.getMxServer("163.com");
+            mxServer = MXExchanger.getMxServer("sohu.com");
         }
         catch (Exception e) {
             e.printStackTrace();

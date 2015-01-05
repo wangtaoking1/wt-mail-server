@@ -4,7 +4,6 @@ package com.wt.utils;
  * @author wangtao
  * @time 2014/11/12
  */
-
 public class MailMessage {
     private User user;
     private String from;

@@ -8,6 +8,11 @@ import com.wt.smtp.SMTPServer;
 import com.wt.utils.Manager;
 import com.wt.utils.MailMessage;
 
+/**
+ * This is a command state
+ * @author wangtao
+ * @time 2014/11/13
+ */
 public class SendState extends State {
 
     private StringBuffer buffer;

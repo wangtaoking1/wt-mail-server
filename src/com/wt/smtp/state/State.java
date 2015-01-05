@@ -3,6 +3,11 @@ package com.wt.smtp.state;
 
 import com.wt.smtp.SMTPServiceThread;
 
+/**
+ * This is the abstract class of command state
+ * @author wangtao
+ * @time 2014/11/13
+ */
 public abstract class State {
     
     /**

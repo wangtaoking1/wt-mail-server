@@ -5,6 +5,12 @@ import com.wt.smtp.SMTPServer;
 import com.wt.smtp.SMTPServiceThread;
 import com.wt.utils.User;
 
+
+/**
+ * This is a command state
+ * @author wangtao
+ * @time 2014/11/13
+ */
 public class AuthState extends State {
     @Override
     public void handle(SMTPServiceThread service, String com, String arg) {

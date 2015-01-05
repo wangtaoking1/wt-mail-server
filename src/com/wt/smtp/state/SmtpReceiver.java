@@ -4,6 +4,11 @@ import com.wt.smtp.SMTPServer;
 import com.wt.smtp.SMTPServiceThread;
 import com.wt.utils.MailMessage;
 
+/**
+ * This is a command state
+ * @author wangtao
+ * @time 2014/11/13
+ */
 public class SmtpReceiver {
     private String[] commands = {"helo", "auth", "mail", "rcpt", "data", "quit"};
     private State state;

@@ -73,6 +73,7 @@ public class PopServiceThread implements Runnable {
         this.closeConnection();
     }
     
+    
     /**
      * Write string to the client
      * @param outStr
@@ -81,6 +82,7 @@ public class PopServiceThread implements Runnable {
         this.output.println(outStr);
         this.output.flush();
     }
+    
     
     /**
      * Close the connection with the client

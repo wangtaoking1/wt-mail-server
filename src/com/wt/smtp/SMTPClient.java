@@ -19,6 +19,7 @@ import com.wt.utils.Manager;
 import com.wt.utils.MailMessage;
 import com.wt.utils.mx.MXExchanger;
 
+
 /**
  * This is a client to send message to server
  * @author wangtao
@@ -84,6 +85,7 @@ public class SMTPClient {
         logger.debug("server: " + server + "\tport: " + String.valueOf(port));
     }
 
+    
     /**
      * Set server information
      * @param server
@@ -94,6 +96,7 @@ public class SMTPClient {
         this.port = port;
     }
 
+    
     /**
      * Send the message to the server
      * @return whether the message is sent successfully
@@ -121,6 +124,7 @@ public class SMTPClient {
         return flag;
     }
 
+    
     /**
      * Initial the socket, input, output
      * @throws Exception
@@ -140,6 +144,7 @@ public class SMTPClient {
         logger.info("Connected " + server + " successfully");
     }
 
+    
     /**
      * Register from the server
      * @throws IOException
@@ -154,6 +159,7 @@ public class SMTPClient {
         logger.info("say helo to the server successfully");
     }
 
+    
     /**
      * Set the mail from and to
      * @throws Exception
@@ -174,6 +180,7 @@ public class SMTPClient {
         logger.info("set envelop successfully");
     }
 
+    
     /**
      * Send the content of the mail message
      * @throws Exception
@@ -193,6 +200,7 @@ public class SMTPClient {
         logger.info("send the message successfully");
     }
 
+    
     /**
      * Quit from the connection with the server
      * @throws Exception
@@ -209,6 +217,7 @@ public class SMTPClient {
 
     }
 
+    
     /**
      * Send message to server
      * @param data "the data needed to send to the server"
@@ -221,21 +230,37 @@ public class SMTPClient {
         logger.debug("Send '" + data + "' to the server successfully");
     }
 
+    
     /**
      *
      * @return "the token of the returned string"
      */
     private int getResultToken() {
         String line = "";
+           
         try {
             line = this.input.readLine();
         } catch (IOException e) {
             logger.error(e);
         }
-
+        
         logger.debug(line);
 
         StringTokenizer get = new StringTokenizer(line, " ");
+
         return Integer.parseInt(get.nextToken());
+    }
+    
+    
+    private boolean checkInputValid(String line) {
+        String[] items = line.split(" ", 2);
+        try {
+            Integer.parseInt(items[0]);
+            return true;
+        }
+        catch (Exception e) {
+            logger.error(e);
+            return false;
+        }
     }
 }

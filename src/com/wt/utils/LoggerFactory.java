@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.apache.log4j.*;
 
+
 /**
  * This is a class to get a logger
  * @author wangtao

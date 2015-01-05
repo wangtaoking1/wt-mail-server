@@ -47,7 +47,7 @@ public class ManageServer implements Runnable {
                 logger.debug("A connection from " + client.getInetAddress()
                             .getHostAddress());
                 
-                client.setSoTimeout(3 * 1000);
+                client.setSoTimeout(30 * 1000);
                 input = new BufferedReader(new InputStreamReader(
                             client.getInputStream()));
                 output = new PrintWriter(client.getOutputStream());

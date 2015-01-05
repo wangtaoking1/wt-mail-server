@@ -73,6 +73,9 @@ public class ApplyState extends State {
     }
     
     
+    /**
+     * Syn the delete operation with DB when quit the connection
+     */
     @Override
     public void synWithDB() {
         //del the receive mail

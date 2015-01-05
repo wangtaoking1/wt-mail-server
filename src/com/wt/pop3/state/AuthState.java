@@ -5,6 +5,7 @@ import com.wt.pop3.PopServiceThread;
 import com.wt.utils.Manager;
 import com.wt.utils.User;
 
+
 /**
  * The auth state of pop3 service
  * @author wangtao

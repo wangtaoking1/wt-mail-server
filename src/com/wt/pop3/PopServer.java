@@ -59,6 +59,7 @@ public class PopServer implements Runnable {
         if (server != null) {
             try {
                 server.close();
+                server = null;
             } catch (Exception e) {
                 logger.error(e);
             }

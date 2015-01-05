@@ -4,6 +4,11 @@ import java.util.regex.Pattern;
 
 import com.wt.smtp.SMTPServiceThread;
 
+/**
+ * This is a command state
+ * @author wangtao
+ * @time 2014/11/13
+ */
 public class DataState extends State {
     
     @Override

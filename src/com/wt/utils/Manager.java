@@ -13,6 +13,7 @@ import com.wt.smtp.SMTPServer;
 public class Manager {
     public static enum MailRole {SENDER, RECEIVER};
     
+    
     /**
      * It is to handle the mail to server
      * @param message mail
@@ -50,6 +51,7 @@ public class Manager {
         driver.closeConnection();
     }
 
+    
     /**
      * Determine whether the server is my local server
      * @param  server
@@ -96,6 +98,7 @@ public class Manager {
         return mail.substring(pos + 1);
     }
     
+    
     /**
      * Get mail user from the mail
      * @param mail
@@ -133,6 +136,7 @@ public class Manager {
         return flag;
     }
 
+    
     /**
      * To register user
      * @param username
@@ -145,6 +149,7 @@ public class Manager {
         driver.closeConnection();
         return flag;
     }
+    
     
     /**
      * To unregister user
@@ -162,6 +167,7 @@ public class Manager {
         return flag;
     }
     
+    
     /**
      * To get the current mail status
      * @return
@@ -172,6 +178,7 @@ public class Manager {
         driver.closeConnection();
         return ret;
     }
+    
     
     /**
      * To get the number of mails
@@ -185,6 +192,7 @@ public class Manager {
         return cnt;
     }
     
+    
     /**
      * To get the total bytes of mails
      * @param n
@@ -197,6 +205,7 @@ public class Manager {
         return bytes;
     }
     
+    
     /**
      * To get the list of mails
      * @return
@@ -207,6 +216,7 @@ public class Manager {
         driver.closeConnection();
         return ret;
     }
+    
     
     /**
      * To get the mail content with number num
