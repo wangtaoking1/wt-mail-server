@@ -1,4 +1,4 @@
 wt-mail-server
 ==============
 
-This is a mail server written by java.
+邮件服务器，支持STMP和POP3协议，支持邮件缓存及转发功能。
